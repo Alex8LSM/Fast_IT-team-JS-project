@@ -1,16 +1,16 @@
 {
-  "name": "team-project-template",
+  "name": "JS-project-test",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://Alex8LSM.github.io/team-project-template",
+  "homepage": "https://Alex8LSM.github.io/JS-project-test",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /team-project-template/"
+    "build": "parcel build src/*.html --public-url /JS-project-test/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Alex8LSM/team-project-template.git"
+    "url": "git+https://github.com/Alex8LSM/JS-project-test.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",

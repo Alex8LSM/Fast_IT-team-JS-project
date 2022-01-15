@@ -6,10 +6,5 @@
 // Стили для файла с примером HTML-фрагмента
 
 @import './example';
-.test-div{
-    width: 100%;
-    height: 200px ;
-    background-color: red;
-}
+@import './My-library-list';
 @import "./main_page_header/header";
-

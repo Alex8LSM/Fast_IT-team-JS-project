@@ -1,0 +1,40 @@
+.My-library-container {
+    margin: 0 auto;
+    
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+        max-width: 280px;
+        padding: 0 20px 40px 20px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        max-width: 618px;
+        padding: 0 75px 50px 75px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        max-width: 882px;
+        padding: 0 71px 46px 71px;
+    }
+}
+
+.My-library-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        display: flex;
+        flex-wrap: wrap;
+        // display: grid;
+        // grid-template-columns: 294px 294px;
+        // grid-auto-rows: 440px;
+        // grid-gap: 30px;
+    }
+
+    // @media screen and (min-width: 1024px) {
+    //     display: grid;
+    //     grid-template-columns: 274px 274px 274px;
+    //     grid-auto-rows: 398px;
+    //     grid-gap: 30px;
+    // }
+}

@@ -1,0 +1,170 @@
+/*our-team-modal*/
+$title-color: #212121; // Основний колір заголовків
+$accent: #2196f3; // колір акценту (виділення посилань і кнопок) +++
+$card-bgc: #ffffff; // Основний колір фону секцій +++
+$active-icon: #ffffff; // Колір тексту героя */ +++
+$inactive-icon: #afb1b8; // Оссновний колір іконок +++
+$anim-func: cubic-bezier(0.4, 0, 0.2, 1); // +++
+$anim-time: 250ms; // +++
+
+.scroll-lock {
+  overflow: hidden;
+}
+
+.backdrop {
+  overflow: scroll;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+
+  &--is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.our-team {
+  &__close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: $body-bgc;
+  }
+  &__first-title {
+    color: $title-color;
+    font-size: 28px;
+    line-height: 1.172;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $desktop) {
+      font-size: 36px;
+    }
+  }
+
+  &__container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    outline: solid 1px red;
+
+    max-width: $mobile;
+    @media screen and (min-width: $tablet) {
+      max-width: $tablet;
+      padding: 20px;
+    }
+    @media screen and (min-width: $desktop) {
+      max-width: $desktop;
+      padding: 15px;
+    }
+  }
+}
+
+.team-cards {
+  margin-bottom: -10px;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -20px;
+    margin-bottom: -20px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-left: -15px;
+    margin-bottom: -15px;
+  }
+
+  &__card {
+    margin-bottom: 10px;
+    background-color: $card-bgc;
+    border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+
+    @media screen and (min-width: $tablet) {
+      width: calc(100% / 2 - 20px);
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: calc(100% / 4 - 15px);
+      margin-left: 15px;
+      margin-bottom: 15px;
+    }
+  }
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+}
+.team-card {
+  padding: 30px 0 24px 0;
+  &__social-icons {
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+
+    &__social-icon {
+      transition: fill $anim-time $anim-func;
+    }
+  }
+  .social-icons {
+    display: flex;
+    align-items: center;
+    &__list {
+      &:not(:first-child) {
+        margin-left: 10px;
+      }
+    }
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 44px;
+      width: 44px;
+      border-radius: 50%;
+      transition: background-color $anim-time $anim-func;
+
+      &:hover,
+      &:focus {
+        background-color: $accent;
+      }
+    }
+  }
+
+  &__social-icon {
+    fill: $inactive-icon;
+
+    .social-icons__list:hover &,
+    .social-icons__list:focus & {
+      fill: $active-icon;
+    }
+  }
+
+  &__title,
+  &__profession {
+    font-size: 16px;
+    line-height: 1.188;
+    text-align: center;
+  }
+  &__title {
+    margin-bottom: 10px;
+  }
+}

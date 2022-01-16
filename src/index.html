@@ -12,16 +12,19 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
+  <body data-lockScroll>
     <header class="main-page-header" id="headerMainPage"></header>
 
     <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
     <!-- <include src="./partials/example.html"></include> -->
    <main>
      <include src="./partials/My-library-container.html"></include>
-
+    <button class="show-team" data-modal-open>Our Team</button>
     <div class="main-container">
     </div>
+
+
+    <include src="./partials/our-team-modal.html"></include>
    </main>
 
    <footer>

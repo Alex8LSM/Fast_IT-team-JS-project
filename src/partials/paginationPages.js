@@ -13,6 +13,7 @@ const pageNumbers = (total, max, current) => {
   return Array.from({length: max}, (_, i) => (i + 1) + from);
 }
 
+
 function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage = 1) {
   let pages = pageNumbers(totalPages, maxPagesVisible, currentPage);
   let currentPageBtn = null;
@@ -59,13 +60,7 @@ function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage
     createAndSetupButton('<<<', 'prev-page', disabled.prev(), () => currentPage -= 1),
     (btn) => btn.disabled = disabled.prev()
   )
-
-  // buttons.set(
-  //   createAndSetupButton('1', 'start-page', disabled.start(), () => currentPage = 1),
-  //   (btn) => btn.disabled = disabled.start()
-  // )
-  
-  
+ 
   
   pages.map((pageNumber, index) => {
     const isCurrentPage = currentPage === pageNumber;
@@ -79,11 +74,6 @@ function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage
     
     buttons.set(button, onPageButtonUpdate(index));
   });
-  
-  //  buttons.set(
-  //   createAndSetupButton('end', 'end-page', disabled.end(), () => currentPage = totalPages),
-  //   (btn) => btn.disabled = disabled.end()
-  // )
 
   buttons.set(
     createAndSetupButton('>>>', 'next-page', disabled.next(), () => currentPage += 1),
@@ -93,7 +83,7 @@ function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage
   buttons.forEach((_, btn) => frag.appendChild(btn));
   paginationButtonContainer.appendChild(frag);
   
-  this.render = (container = document.body) => {
+  this.render = (container = document.querySelector(".main-container")) => {
     container.appendChild(paginationButtonContainer);
   }
   
@@ -112,7 +102,6 @@ function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage
   window.addEventListener('resize', (e) => {
    renderPages()
   })
-
 
 export function renderPages() {
   let swCurrent = window.innerWidth;

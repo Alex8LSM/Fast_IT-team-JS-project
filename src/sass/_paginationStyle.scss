@@ -1,0 +1,28 @@
+.pagination-buttons767,
+.pagination-buttons1200 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.page-btn {
+  width: 40px;
+  height: 40px;
+  background: none;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  border: none;
+
+  &:hover,
+  &:focus {
+    border-radius: 5px;
+    background: #ff6b08;
+  }
+}
+
+.active {
+  border-radius: 5px;
+  background: #ff6b08;
+}

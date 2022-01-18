@@ -3,7 +3,7 @@ const header = document.getElementById('headerMainPage');
 function headerMainPage() {
   return `<div class="container">
   <div class="wrapper">
-    <a class="logo" href="./images/main_page_header/film.svg">
+    <a class="logo" href="./images/main_page_header/sprite.svg#film">
       <use class="logo__svg">
         <svg clsss="logo__img" src="" width="25px" height="25px"></svg>
       </use>
@@ -11,9 +11,9 @@ function headerMainPage() {
     </a>
     <div class="user">
       <a class="user__home" href="">
-        <p class="user__actions--carrent">HOME</p>
+        <p class="user__actions--current">HOME</p>
       </a>
-      <a class="user__library" href="">
+      <a class="user__library" href="" id="userLibrary">
         <p class="user__actions">MY LIBRARY</p>
       </a>
     </div>

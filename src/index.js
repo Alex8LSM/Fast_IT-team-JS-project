@@ -7,3 +7,10 @@ renderHeader();
 import { renderModal } from './js/our-team-modal.js';
 //
 renderModal();
+//
+import { renderPages } from './partials/paginationPages.js';
+//
+renderPages();
+
+
+

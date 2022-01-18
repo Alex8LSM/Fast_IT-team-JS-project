@@ -3,41 +3,41 @@ import our_team_data from '../json/our-team.json';
 function renderModal() {
 
   const refs = {
-    openModalBtn: document.querySelector('[data-modal-open]'),
-    closeModalBtn: document.querySelector('[data-modal-close]'),
-    backdrop: document.querySelector('[data-modal]'),
+    btnModalOpen: document.querySelector('[data-modal-open]'),
+    btnModalclose: document.querySelector('[data-modal-close]'),
+    myModal: document.querySelector('[data-modal]'),
     lockScroll: document.querySelector('[data-lockScroll]'),
   };
 
-  refs.openModalBtn.addEventListener('click', onOpenModal);
-  refs.closeModalBtn.addEventListener('click', onCloseModal);
-  refs.backdrop.addEventListener('click', onBackdropClick);
+  refs.btnModalOpen.addEventListener('click', onModalOpen);
+  refs.btnModalclose.addEventListener('click', onModalClose);
+  refs.myModal.addEventListener('click', onClickBackdrop);
 
-  function onOpenModal() {
-    window.addEventListener('keydown', onEscKeyPress);
-    refs.backdrop.classList.remove('backdrop--is-hidden');
+  function onModalOpen() {
+    window.addEventListener('keydown', onPressEsc);
+    refs.myModal.classList.remove('myBackdrop--is-hidden');
     refs.lockScroll.classList.add('scroll-lock');
   }
 
-  function onCloseModal() {
-    window.removeEventListener('keydown', onEscKeyPress);
-    refs.backdrop.classList.add('backdrop--is-hidden');
+  function onModalClose() {
+    window.removeEventListener('keydown', onPressEsc);
+    refs.myModal.classList.add('myBackdrop--is-hidden');
     refs.lockScroll.classList.remove('scroll-lock');
   }
 
-  function onBackdropClick(event) {
+  function onClickBackdrop(event) {
     if (event.currentTarget === event.target) {
       // console.log('Кликнули именно в бекдроп!!!!');
-      onCloseModal();
+      onModalClose();
     }
   }
 
-  function onEscKeyPress(event) {
+  function onPressEsc(event) {
     const ESC_KEY_CODE = 'Escape';
     const isEscKey = event.code === ESC_KEY_CODE;
 
     if (isEscKey) {
-      onCloseModal();
+      onModalClose();
     }
   }
 

@@ -1,3 +1,4 @@
+
 body.show-modal .backdrop {
     opacity: 1;
     visibility: visible;
@@ -30,6 +31,7 @@ body.show-modal .modal {
     position: relative;
     padding: 48px 20px 41px 20px;
     max-width: 280px;
+    width: 100%;
     border-radius: 5px;
     transform: scale(1.3);
     transition: transform 250ms ease-in-out;
@@ -48,12 +50,12 @@ body.show-modal .modal {
         background-color: transparent;
         border-radius: 5px;
     }
-    @media screen and (min-width: $desktop) {
+    @media screen and (min-width: $tablet) {
         max-width: 618px;
         display: flex;
         padding: 42px 30px 40px 28px;
     }
-    @media screen and (min-width: $tablet) {
+    @media screen and (min-width: $desktop) {
         padding: 50px 30px 40px 30px; 
         max-width: 882px;
     }
@@ -133,11 +135,18 @@ body.show-modal .modal {
             margin-right: 83px;
         }
     }
+
+    &__item:not(:last-child) {
+        margin-bottom: 10px;
+    }
     &__value {
         font-size: 12px;
         font-weight: 500;
         line-height: 1.3;
         color: $container-bgc;
+    }
+    &__value:not(:last-child) {
+        margin-bottom: 10px;
     }
     &__value--slash {
         color: $modal-text-color;

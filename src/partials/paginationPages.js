@@ -56,15 +56,19 @@ function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage
     }
   };
   
+buttons.set(
+    createAndSetupButton('|<', 'start-page', disabled.start(), () => currentPage = 1),
+    (btn) => btn.disabled = disabled.start()
+  )
+
   buttons.set(
-    createAndSetupButton('<<<', 'prev-page', disabled.prev(), () => currentPage -= 1),
+    createAndSetupButton('Prev', 'prev-page', disabled.prev(), () => currentPage -= 1),
     (btn) => btn.disabled = disabled.prev()
   )
  
-  
   pages.map((pageNumber, index) => {
-    const isCurrentPage = currentPage === pageNumber;
-    const button = createAndSetupButton(
+  const isCurrentPage = currentPage === pageNumber;
+  const button = createAndSetupButton(
       pageNumber, isCurrentPage ? 'active' : '', false, onPageButtonClick
     );
     
@@ -76,8 +80,13 @@ function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage
   });
 
   buttons.set(
-    createAndSetupButton('>>>', 'next-page', disabled.next(), () => currentPage += 1),
+    createAndSetupButton('Next', 'next-page', disabled.next(), () => currentPage += 1),
     (btn) => btn.disabled = disabled.next()
+  )
+
+   buttons.set(
+    createAndSetupButton('>|', 'end-page', disabled.end(), () => currentPage = totalPages),
+    (btn) => btn.disabled = disabled.end()
   )
   
   buttons.forEach((_, btn) => frag.appendChild(btn));
@@ -99,7 +108,7 @@ function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage
 }
 
 
-  window.addEventListener('resize', (e) => {
+  window.addEventListener('resize', () => {
    renderPages()
   })
 
@@ -107,14 +116,14 @@ export function renderPages() {
   let swCurrent = window.innerWidth;
   if (swCurrent < 767) {
     
-    if (document.querySelector(".pagination-buttons767")) { return }
+    if (document.querySelector(".pagination-buttons-mob")) { return }
 
-    if (document.querySelector(".pagination-buttons1200")) {
-      document.querySelector(".pagination-buttons1200").innerHTML = ""
-      document.querySelector(".pagination-buttons1200").remove()
+    if (document.querySelector(".pagination-buttons-desktop")) {
+      document.querySelector(".pagination-buttons-desktop").innerHTML = ""
+      document.querySelector(".pagination-buttons-desktop").remove()
     }
       
-      const paginationButtons = new PaginationButton(1000, 5,767);
+      const paginationButtons = new PaginationButton(1000, 3,"-mob");
 
       paginationButtons.render();
 
@@ -124,13 +133,13 @@ export function renderPages() {
     
   } else {
     
-    if (document.querySelector(".pagination-buttons1200")) { return };
-    if (document.querySelector(".pagination-buttons767")) {
-      document.querySelector(".pagination-buttons767").innerHTML = ""
-      document.querySelector(".pagination-buttons767").remove()
+    if (document.querySelector(".pagination-buttons-desktop")) { return };
+    if (document.querySelector(".pagination-buttons-mob")) {
+      document.querySelector(".pagination-buttons-mob").innerHTML = ""
+      document.querySelector(".pagination-buttons-mob").remove()
     }
       
-      const paginationButtons = new PaginationButton(1000, 7,1200);
+      const paginationButtons = new PaginationButton(1000, 5,"-desktop");
 
       paginationButtons.render();
 

@@ -1,8 +1,8 @@
 import './sass/main.scss';
 //
-import { renderHeader } from './partials/main_page_header/main_page_header.js';
+// import { renderHeader } from './partials/main_page_header/main_page_header.js';
 //
-renderHeader();
+// renderHeader();
 
 import { renderModal } from './js/our-team-modal.js';
 //
@@ -11,6 +11,3 @@ renderModal();
 import { renderPages } from './partials/paginationPages.js';
 //
 renderPages();
-
-
-

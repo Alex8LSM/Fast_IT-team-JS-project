@@ -4,7 +4,8 @@ const homeLink = document.getElementById('userHome');
 const headerBtn = document.getElementById('headerButtons');
 const headerSearch = document.getElementById('headerSearch');
 
-function onClickLibrary() {
+function onClickLibrary(e) {
+    e.preventDefault();
     headerPage.classList.remove('main-page-header');
     headerPage.classList.add('header-library');
     headerBtn.classList.remove('visually-hidden');
@@ -14,7 +15,8 @@ function onClickLibrary() {
 }
 libraryLink.addEventListener("click", onClickLibrary);
 
-function onClickHome() {
+function onClickHome(e) {
+    e.preventDefault();
     headerPage.classList.remove('header-library');
     headerPage.classList.add('main-page-header');
     headerSearch.classList.remove('visually-hidden');
@@ -24,3 +26,5 @@ function onClickHome() {
 }
 
 homeLink.addEventListener("click", onClickHome);
+
+export { onClickHome }

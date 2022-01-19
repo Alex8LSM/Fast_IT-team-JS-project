@@ -12,24 +12,27 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
+  <body data-lockScroll>
     <header class="main-page-header" id="headerMainPage"></header>
 
     <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
-    <main>
-   <include src="./partials/My-library-container.html"></include>
-   <include src="./partials/modalMovie.html"></include>
+
+
+
+   <main>
+     <include src="./partials/My-library-container.html"></include>
+    <button class="show-team" data-modal-open>Our Team</button>
     <div class="main-container">
     </div>
 
-    <include src="./partials/modalMovie.html"></include>
+    <include src="./partials/our-team-modal.html"></include>
+
    </main>
-
    <footer>
-     <include src="./partials/footer.html"></include>
+    <include src="./partials/footer.html"></include>
    </footer>
-    <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
 
+    <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
   </body>
 </html>

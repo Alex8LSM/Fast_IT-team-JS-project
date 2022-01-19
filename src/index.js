@@ -6,6 +6,10 @@ import { renderModal } from './js/our-team-modal.js';
 //
 renderModal();
 //
-import { renderPages } from './partials/paginationPages.js';
+import { renderPages } from './js/paginationPages';
 //
 renderPages();
+//
+import { createUpBtn } from './js/upButton';
+//
+createUpBtn();

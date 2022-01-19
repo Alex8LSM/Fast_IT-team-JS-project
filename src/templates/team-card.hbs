@@ -1,11 +1,11 @@
-<h2 class="our-team__first-title">Our Team</h2>
 <ul class="list-box team-cards">
   {{#each []}}
     <li class="team-cards__card">
                 <img
                   class="team-cards__image"
-                  srcset="./images/our_team/{{big-image}}.jpg 2x"
-                  src="./images/our_team/{{small-image}}.jpg"
+                  {{!-- srcset='./images/our_team/{{big-image}}.jpg 2x' --}}
+                  {{!-- src='./images/our_team/{{small-image}}.jpg' --}}
+                  src='https://github.com/Alex8LSM/JS-project-test/blob/main/src/images/our_team/{{small-image}}.jpg'
                   width="450"
                   height="294"
                   alt="{{alt}}"

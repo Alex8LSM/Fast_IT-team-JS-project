@@ -1,18 +1,18 @@
 /*our-team-modal*/
 $title-color: #212121; // Основний колір заголовків
-$accent: #2196f3; // колір акценту (виділення посилань і кнопок) +++
-$card-bgc: #ffffff; // Основний колір фону секцій +++
-$active-icon: #ffffff; // Колір тексту героя */ +++
-$inactive-icon: #afb1b8; // Оссновний колір іконок +++
-$anim-func: cubic-bezier(0.4, 0, 0.2, 1); // +++
-$anim-time: 250ms; // +++
+$accent: #2196f3; // колір акценту (виділення посилань і кнопок)
+$card-bgc: #ffffff; // Основний колір фону секцій
+$active-icon: #ffffff; // Колір тексту героя */
+$inactive-icon: #afb1b8; // Оссновний колір іконок
+$anim-func: cubic-bezier(0.4, 0, 0.2, 1); //
+$anim-time: 250ms; //
 
 .scroll-lock {
   overflow: hidden;
 }
 
 .myBackdrop {
-  overflow: scroll;
+  overflow: auto;
   position: fixed;
   top: 0;
   left: 0;
@@ -37,14 +37,18 @@ $anim-time: 250ms; // +++
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    position: absolute;
-    right: 8px;
+    position: fixed;
+    right: 25px;
     top: 8px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: $body-bgc;
+
+    @media screen and (min-width: $desktop) {
+      right: 15px;
+    }
   }
   &__first-title {
     color: $title-color;
@@ -52,7 +56,6 @@ $anim-time: 250ms; // +++
     line-height: 1.172;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 20px;
 
     @media screen and (min-width: $desktop) {
       font-size: 36px;
@@ -62,13 +65,11 @@ $anim-time: 250ms; // +++
   &__container {
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
-    outline: solid 1px red;
-
+    padding: 10px 10px 10px 27px;
     max-width: $mobile;
     @media screen and (min-width: $tablet) {
       max-width: $tablet;
-      padding: 20px;
+      padding: 15px 10px 15px 27px;
     }
     @media screen and (min-width: $desktop) {
       max-width: $desktop;

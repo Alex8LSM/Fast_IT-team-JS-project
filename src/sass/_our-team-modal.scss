@@ -29,9 +29,7 @@ $anim-time: 250ms; //
     opacity: 0;
     pointer-events: none;
   }
-}
 
-.our-team {
   &__close-btn {
     display: flex;
     align-items: center;
@@ -50,13 +48,17 @@ $anim-time: 250ms; //
       right: 15px;
     }
   }
+}
+
+.our-team {
+
   &__first-title {
     color: $title-color;
     font-size: 28px;
     line-height: 1.172;
     font-weight: 700;
     text-align: center;
-
+    padding-top: 15px;
     @media screen and (min-width: $desktop) {
       font-size: 36px;
     }
@@ -116,7 +118,7 @@ $anim-time: 250ms; //
   }
 }
 .team-card {
-  padding: 30px 0 24px 0;
+  padding: 15px 0 15px 0;
   &__social-icons {
     align-items: center;
     justify-content: center;
@@ -126,46 +128,10 @@ $anim-time: 250ms; //
       transition: fill $anim-time $anim-func;
     }
   }
-  .social-icons {
-    display: flex;
-    align-items: center;
-    &__list {
-      &:not(:first-child) {
-        margin-left: 10px;
-      }
-    }
-    &__icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 44px;
-      width: 44px;
-      border-radius: 50%;
-      transition: background-color $anim-time $anim-func;
 
-      &:hover,
-      &:focus {
-        background-color: $accent;
-      }
-    }
-  }
-
-  &__social-icon {
-    fill: $inactive-icon;
-
-    .social-icons__list:hover &,
-    .social-icons__list:focus & {
-      fill: $active-icon;
-    }
-  }
-
-  &__title,
-  &__profession {
+  &__title{
     font-size: 16px;
     line-height: 1.188;
     text-align: center;
-  }
-  &__title {
-    margin-bottom: 10px;
   }
 }

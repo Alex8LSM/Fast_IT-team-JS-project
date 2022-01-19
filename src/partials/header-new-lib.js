@@ -26,5 +26,3 @@ function onClickHome(e) {
 }
 
 homeLink.addEventListener("click", onClickHome);
-
-export { onClickHome }

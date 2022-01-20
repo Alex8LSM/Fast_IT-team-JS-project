@@ -6,10 +6,17 @@ import { renderModal } from './js/our-team-modal.js';
 //
 renderModal();
 //
+
+import './js/fetchTrendyMovie';
+//
+
 import { renderPages } from './js/paginationPages';
+
 //
 renderPages();
 //
 import { createUpBtn } from './js/upButton';
 //
+
 createUpBtn();
+

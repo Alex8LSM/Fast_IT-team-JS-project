@@ -5,12 +5,15 @@
 
 // Стили для файла с примером HTML-фрагмента
 @import './variables';
+@import './common';
 @import './My-library-list';
-@import './main_page_header/header';
+@import './header-new-l';
 @import './footer';
 @import './normalize';
 @import './paginationStyle';
+@import './upButton';
 @import './fonts';
-@import './modal';
+@import './modalMovie';
 @import './common';
+@import './our-team-modal';
 

@@ -1,18 +1,17 @@
-import teamCard from '../templates/team-card.hbs';
-import our_team_data from '../json/our-team.json';
 function renderModal() {
 
   const refs = {
-    btnModalOpen: document.querySelector('[data-modal-open]'),
+    show_Team: document.querySelector('[data-modal-open]'),
     btnModalclose: document.querySelector('[data-modal-close]'),
     myModal: document.querySelector('[data-modal]'),
     lockScroll: document.querySelector('[data-lockScroll]'),
+    ourTeamModal: document.querySelector('.our-team__container'),
   };
 
-  refs.btnModalOpen.addEventListener('click', onModalOpen);
+  refs.show_Team.addEventListener('click', onModalOpen);
   refs.btnModalclose.addEventListener('click', onModalClose);
   refs.myModal.addEventListener('click', onClickBackdrop);
-
+ 
   function onModalOpen() {
     window.addEventListener('keydown', onPressEsc);
     refs.myModal.classList.remove('myBackdrop--is-hidden');
@@ -27,7 +26,6 @@ function renderModal() {
 
   function onClickBackdrop(event) {
     if (event.currentTarget === event.target) {
-      // console.log('Кликнули именно в бекдроп!!!!');
       onModalClose();
     }
   }
@@ -39,19 +37,6 @@ function renderModal() {
     if (isEscKey) {
       onModalClose();
     }
-  }
-
-  const ourTeamModal = document.querySelector('.our-team__container');
-  const show_Team = document.querySelector('.show-team');
-
-  show_Team.addEventListener('click', showTeam);
-
-  function showTeam() {
-    // console.log('our team');
-    // console.log(our_team_data);
-    const markup = teamCard(our_team_data);
-    // ourTeamModal.insertAdjacentHTML('beforeend', markup);
-    ourTeamModal.innerHTML = markup;
   }
 }
 export { renderModal };

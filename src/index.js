@@ -1,6 +1,12 @@
 import './sass/main.scss';
 //
-import './partials/header-new-lib';
+import { onClickHome } from './js/header-new-lib.js';
+//
+onClickHome();
+//
+import { onClickLibrary } from './js/header-new-lib.js';
+//
+onClickLibrary();
 //
 import { renderModal } from './js/our-team-modal.js';
 //

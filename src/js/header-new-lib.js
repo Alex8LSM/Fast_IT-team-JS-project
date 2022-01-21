@@ -4,6 +4,13 @@ function headerJS() {
     const homeLink = document.getElementById('userHome');
     const headerBtn = document.getElementById('headerButtons');
     const headerSearch = document.getElementById('headerSearch');
+    const logoLink = document.getElementById('logo-link');
+
+    function onLogoClick(e) {
+        e.preventDefault();
+        location.reload();
+    }
+    logoLink.addEventListener('click', onLogoClick);
 
     function onClickLibrary(e) {
         e.preventDefault();

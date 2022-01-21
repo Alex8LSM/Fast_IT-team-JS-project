@@ -1,4 +1,3 @@
-
 function createUpBtn() {
     const buttonUp = document.createElement('button');
     buttonUp.className = `upBtn`;
@@ -7,8 +6,7 @@ function createUpBtn() {
         
     window.addEventListener("scroll", () => {
         let a = window.pageYOffset;
-        console.log(a);
-        if (a > 50) {
+        if (a > 100) {
             btn.classList.add('showUpBtn');
         } else {
             btn.classList.remove('showUpBtn');

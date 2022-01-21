@@ -3,6 +3,7 @@ const KEY = '61d280fbc4e0ab3fee827783c53f7600';
 const axios = require('axios');
 
 export default class ApiMovie {
+
     constructor() {
       this.page = 1;
       this.totalPages = 100;
@@ -24,17 +25,19 @@ export default class ApiMovie {
         return listOfGenres;
     }
 
+
+
   putGenresAndCutReleaseDateToYear() {
-      return this.fetchTrendyMovie().then(data => {
+    return this.fetchTrendyMovie().then(data => {
       return this.fetchGenres().then(listOfGenres => {
         return data.map(movie => ({
           ...movie,
-          release_date: movie.release_date.slice(0,4),
+          release_date: movie.release_date.slice(0, 4),
           genres: movie.genre_ids.map(id => listOfGenres.filter(genre => genre.id === id)).flat(),
         }));
       });
     });
-              
+        
   }
   
   setTotalPg(total) {
@@ -47,6 +50,6 @@ export default class ApiMovie {
 
    pageSet(num){
         this.page = num;
+
   }
 }
-

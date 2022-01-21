@@ -3,27 +3,29 @@ const KEY = '61d280fbc4e0ab3fee827783c53f7600';
 const axios = require('axios');
 
 export default class ApiMovie {
-  constructor() {
-    this.page = 1;
-  }
 
-  async fetchTrendyMovie() {
-    const trendyMovieUrl = `${BASE_URL}trending/movie/day?api_key=${KEY}`;
-    const fetch = await axios.get(trendyMovieUrl);
-    const trendyMovies = fetch.data.results;
+    constructor() {
+      this.page = 1;
+      this.totalPages = 100;
+    };
 
-    this.incrementPage();
+    async fetchTrendyMovie() {
+        const trendyMovieUrl = `${BASE_URL}trending/movie/day?api_key=${KEY}&page=${this.page}`;
+        const fetch = await axios.get(trendyMovieUrl);
+        const trendyMovies = fetch.data.results;
+                 
+        return trendyMovies;
+    }
 
-    return trendyMovies;
-  }
+    async fetchGenres() {
+        const genreUrl = `${BASE_URL}genre/movie/list?api_key=${KEY}&language=en-US`;
+        const fetchGenre = await axios.get(genreUrl);
+        const listOfGenres = fetchGenre.data.genres;
+                 
+        return listOfGenres;
+    }
 
-  async fetchGenres() {
-    const genreUrl = `${BASE_URL}genre/movie/list?api_key=${KEY}&language=en-US`;
-    const fetchGenre = await axios.get(genreUrl);
-    const listOfGenres = fetchGenre.data.genres;
 
-    return listOfGenres;
-  }
 
   putGenresAndCutReleaseDateToYear() {
     return this.fetchTrendyMovie().then(data => {
@@ -35,13 +37,19 @@ export default class ApiMovie {
         }));
       });
     });
+        
   }
-
-  incrementPage() {
-    this.page += 1;
+  
+  setTotalPg(total) {
+    this.totalPages = total;
   }
+  
+    resetPage() {
+        this.page = 1;
+  }  
 
-  resetPage() {
-    this.page = 1;
+   pageSet(num){
+        this.page = num;
+
   }
 }

@@ -26,6 +26,12 @@ $anim-time: 250ms; //
   visibility: visible;
   z-index: 1;
 
+    @media screen and (min-width: $desktop) {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+
   &--is-hidden {
     visibility: hidden;
     opacity: 0;
@@ -80,11 +86,7 @@ $anim-time: 250ms; //
       padding: 10px 20px 10px 20px;
     }
     @media screen and (min-width: $desktop) {
-      min-width: $desktop;
-      max-width: 100vw;
-      position: absolute;
-      transform: translatey(-50%);
-      top: 50%;
+      max-width: $desktop;
     }
   }
 }

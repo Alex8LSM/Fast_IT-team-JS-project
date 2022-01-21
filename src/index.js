@@ -8,12 +8,18 @@ import { renderModal } from './js/our-team-modal.js';
 //
 renderModal();
 //
-import {renderMainPage} from './js/fetchTrendyMovie';
+
+import './js/fetchTrendyMovie';
 //
-renderMainPage();
+
+import { renderPages } from './js/paginationPages';
+
+//
+renderPages();
 //
 import { createUpBtn } from './js/upButton';
 //
+
 createUpBtn();
 //
 import spiner from './js/spiner';

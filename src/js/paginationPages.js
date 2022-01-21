@@ -1,10 +1,3 @@
-import ApiMovie from '/js/apiMovie';
-//
-const rendMovie = new ApiMovie();
-//
-import {renderFilmsCard} from './fetchTrendyMovie'
-
-
 const pageNumbers = (total, max, current) => {
   const half = Math.floor(max / 2);
   let to = max;
@@ -20,7 +13,8 @@ const pageNumbers = (total, max, current) => {
   return Array.from({length: max}, (_, i) => (i + 1) + from);
 }
 
-function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage = rendMovie.page) {
+
+function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage = 1) {
   let pages = pageNumbers(totalPages, maxPagesVisible, currentPage);
   let currentPageBtn = null;
   const buttons = new Map();
@@ -129,19 +123,12 @@ export function renderPages() {
       document.querySelector(".pagination-buttons-desktop").remove()
     }
       
-      const paginationButtons = new PaginationButton(rendMovie.totalPages, 3,"-mob");
+      const paginationButtons = new PaginationButton(1000, 3,"-mob");
 
       paginationButtons.render();
 
-    paginationButtons.onChange(e => {
-        e.preventDefault();
-        let pageCt = e.target.value;
-        console.log(pageCt);
-        rendMovie.pageSet(pageCt);
-        console.log(rendMovie.page);
-        rendMovie.putGenresAndCutReleaseDateToYear()
-        .then(renderFilmsCard)
-      
+      paginationButtons.onChange(e => {
+        let pageCurent=e.target.value
       });
     
   } else {
@@ -152,19 +139,12 @@ export function renderPages() {
       document.querySelector(".pagination-buttons-mob").remove()
     }
       
-      const paginationButtons = new PaginationButton(rendMovie.totalPages, 5,"-desktop");
+      const paginationButtons = new PaginationButton(1000, 5,"-desktop");
 
       paginationButtons.render();
 
       paginationButtons.onChange(e => {
-        
-        e.preventDefault();
-        let pageCt = e.target.value;
-        console.log(pageCt);
-        rendMovie.pageSet(pageCt);
-        console.log(rendMovie.page);
-        rendMovie.putGenresAndCutReleaseDateToYear()
-        .then(renderFilmsCard)
+        let pageCurent=e.target.value
       });
     
   }

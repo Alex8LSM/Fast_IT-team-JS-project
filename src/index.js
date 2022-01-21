@@ -1,6 +1,8 @@
 import './sass/main.scss';
 //
-import './partials/header-new-lib';
+import { headerJS } from './js/header-new-lib.js';
+
+headerJS();
 //
 import { renderModal } from './js/our-team-modal.js';
 //

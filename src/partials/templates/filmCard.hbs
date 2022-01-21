@@ -1,4 +1,4 @@
-{{#each this}}
+{{!-- {{#each this}}
 <div class="film-card">
     <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" width=250 height=320 loading="lazy" />
     <div class="info">     
@@ -7,5 +7,21 @@
         <p class="info-year">{{release_date}}</p>
     </div>  
 </div>
-{{/each}}
+{{/each}} --}}
 
+ {{#each this}}
+    <li class="unit-film-card">
+        <a class="unit-film-card__link" href="">
+            <div class="card-tumb">
+                <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}">
+                <div class="unit-film-card__link__text-box">
+                    <p class="unit-film-card__link__text">{{overview}}</p>
+                </div>
+            </div>         
+            <div class="card-wrapper-film">
+                <h2 class="unit-film-card__item">{{title}}</h2>
+                <p class="unit-film-card__item-text">{{#each genres}} {{name}}{{/each}} | {{release_date}}</p>
+            </div>
+        </a>  
+    </li>
+  {{/each}}

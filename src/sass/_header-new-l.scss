@@ -24,20 +24,20 @@
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
-    @media screen and (min-width: 320px) and (max-width: 767px) {
+    @media screen and (min-width: $min-width) {
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/library-320.png");
         @media screen and(min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
             background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/library-320@2x.png");
         }
     }
-    @media screen and(min-width: 768px) and(max-width: 1023px) {
+    @media screen and(min-width: $tablet) {
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/library-768.png");
         @media screen and(min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
             background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/library-768@2x.png");
         }
     }
-    @media screen and(min-width: 1024px) and(max-width: 1920px) {
-        width: 1024px;
+    @media screen and(min-width: $desktop) {
+        width: $desktop;
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/library-1024.png");
         @media screen and(min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
             background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/library-1024@2x.png");
@@ -74,7 +74,7 @@ a:hover {
     padding-left: 21px;
     padding-top: 46px;
     padding-bottom: 46px;
-    @media screen and(min-width: 768px) and (max-width: 1920px) {
+    @media screen and(min-width: $tablet) {
         padding-left: 71px;
     }
 }
@@ -82,7 +82,7 @@ a:hover {
 .header-library__title {
     display: none;
     margin: 0 auto;
-    @media screen and (min-width: 768px) and (max-width: 1920px) {
+    @media screen and (min-width: $tablet) {
         padding-left: 10px;
         font-size: 30px;
         line-height: 1.17;
@@ -108,10 +108,10 @@ a:hover {
     display: flex;
     padding-top: 12px;
     padding-right: 20px;
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
+    @media screen and (min-width: $tablet) {
         padding-right: 75px;
     }
-    @media screen and (min-width: 1024px) and (max-width: 1920px) {
+    @media screen and (min-width: $desktop) {
         padding-right: 71px;
     }
 }
@@ -223,7 +223,7 @@ a:hover {
     outline: none;
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: $min-width) {
     .container {
         width: 100%;
         margin: 0 auto;
@@ -249,7 +249,7 @@ a:hover {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: $tablet) {
     .container {
         width: 100%;
         margin: 0 auto;
@@ -268,10 +268,10 @@ a:hover {
     }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1920px) {
+@media screen and (min-width: $desktop) {
     .container {
         width: 100%;
-        max-width: 1024px;
+        max-width: $desktop;
         margin: 0 auto;
     }
     .search {

@@ -21,4 +21,6 @@ import { createUpBtn } from './js/upButton';
 //
 
 createUpBtn();
-
+//
+import spiner from './js/spiner';
+spiner();

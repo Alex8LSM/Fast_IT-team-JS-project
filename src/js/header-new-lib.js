@@ -29,5 +29,3 @@ function headerJS() {
     homeLink.addEventListener("click", onClickHome);
 }
 export { headerJS };
-// export { onClickLibrary }
-// export { onClickHome }

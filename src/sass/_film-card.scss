@@ -1,7 +1,17 @@
-.unit-film-card{
-    margin: 0 auto 20px auto;
-    width: 274px;
-    height: 440px;
+.unit-film-card {
+    margin-bottom: 20px;
+    padding: 0;
+    width: 100%;
+
+    @media screen and (min-width: $tablet) {
+        width: 294px;
+        margin: 0;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 274px;
+    }
+
 }
 .card-tumb{
  position: relative;
@@ -9,10 +19,10 @@
   border-radius: 5px;
   margin-bottom: 5px;
 }
-image{
+.image{
     display: block;
     width:100%;
-       
+    height: auto;       
 }
 .unit-film-card__item{
     color: black;

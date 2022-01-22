@@ -56,16 +56,34 @@ img {
 .main-container {
     margin-left: auto;
     margin-right: auto;
-    padding: 0px 20px 40px 20px;
+    padding: 5px;
     min-height: 100vh;
     background-color: $container-bgc;
-    max-width: $mobile;
+    list-style: none;
+
+    @media screen and (min-width: $min-width) {
+        max-width: $min-width;
+        padding: 20px 20px 40px 20px;
+    }
+    
+    @media screen and (min-width: $mobile) {
+        max-width: $mobile;
+        padding: 20px 20px 40px 20px;
+    }
+
     @media screen and (min-width: $tablet) {
         max-width: $tablet;
-        padding: 0px 75px 50px 75px;
+        padding: 60px 75px 50px 75px;
+        display: grid;
+        grid-template-columns: 294px 294px;
+        grid-gap: 30px;
     }
+    
     @media screen and (min-width: $desktop) {
         max-width: $desktop;
-        padding: 0px 71px 50px 71px;
+        padding: 60px 71px 50px 71px;
+        display: grid;
+        grid-template-columns: 274px 274px 274px;
+        grid-gap: 30px;
     }
 }

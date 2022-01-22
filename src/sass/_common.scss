@@ -78,12 +78,12 @@ img {
         grid-template-columns: 294px 294px;
         grid-gap: 30px;
     }
+    
     @media screen and (min-width: $desktop) {
         max-width: $desktop;
         padding: 60px 71px 50px 71px;
         display: grid;
         grid-template-columns: 274px 274px 274px;
-        grid-column-gap: 30px;
-        grid-row-gap: 30px;
+        grid-gap: 30px;
     }
 }

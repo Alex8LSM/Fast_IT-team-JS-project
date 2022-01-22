@@ -12,11 +12,6 @@ renderModal();
 import './js/fetchTrendyMovie';
 //
 
-import { renderPages } from './js/paginationPages';
-
-//
-renderPages();
-//
 import { createUpBtn } from './js/upButton';
 //
 

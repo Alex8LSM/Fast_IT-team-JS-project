@@ -32,7 +32,7 @@ export default class ApiMovie {
         return data.map(movie => ({
           ...movie,
           release_date: movie.release_date.slice(0, 4),
-          genres: movie.genre_ids.map(id => listOfGenres.filter(genre => genre.id === id)).flat(),
+          genres: movie.genre_ids.slice(0,3).map(id => listOfGenres.filter(genre => genre.id === id)).flat(),
         }));
       });
     });

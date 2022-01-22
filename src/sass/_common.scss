@@ -76,7 +76,6 @@ img {
         padding: 60px 75px 50px 75px;
         display: grid;
         grid-template-columns: 294px 294px;
-        grid-auto-rows: 440px;
         grid-gap: 30px;
     }
     @media screen and (min-width: $desktop) {
@@ -84,7 +83,6 @@ img {
         padding: 60px 71px 50px 71px;
         display: grid;
         grid-template-columns: 274px 274px 274px;
-        grid-auto-rows: 440px;
         grid-column-gap: 30px;
         grid-row-gap: 30px;
     }

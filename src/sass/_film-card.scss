@@ -1,13 +1,18 @@
 .unit-film-card {
-  margin-bottom: 0 auto 30px auto;
-  padding: 0;
-  width: 100%;
-  height: 440px;
 
-  @media screen and (min-width: $tablet) {
-    width: 294px;
-    height: 440px;
-  }
+    margin-bottom: 20px;
+    padding: 0;
+    width: 100%;
+
+    @media screen and (min-width: $tablet) {
+        width: 294px;
+        margin: 0;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 274px;
+    }
+
 
   @media screen and (min-width: $desktop) {
     width: 274px;
@@ -20,10 +25,12 @@
   border-radius: 5px;
   margin-bottom: 5px;
 }
-image {
-  display: block;
-  width: 100%;
-  height: 400px;
+
+image{
+    display: block;
+    width:100%;
+    height: auto;       
+
 }
 .unit-film-card__item {
   color: black;

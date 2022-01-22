@@ -13,13 +13,19 @@
     <li class="unit-film-card">
         <a class="unit-film-card__link" href="">
             <div class="card-tumb">
-                <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}">
+                 {{#if poster_path}}
+                <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" data-id="{{id}}">
+                 {{/if}}
+                 {{#unless poster_path}}
+  <img src="https://stringfixer.com/files/325551406.jpg"
+   alt="movie photo"  data-id="{{id}}">
+  {{/unless}}
                 <div class="unit-film-card__link__text-box">
-                    <p class="unit-film-card__link__text">{{overview}}</p>
+                    <p class="unit-film-card__link__text" data-id="{{id}}">{{overview}}</p>
                 </div>
             </div>         
             <div class="card-wrapper-film">
-                <h2 class="unit-film-card__item">{{title}}</h2>
+                <h2 class="unit-film-card__item" data-id="{{id}}">{{title}}</h2>
                 <p class="unit-film-card__item-text">{{#each genres}} {{name}}{{/each}} | {{release_date}}</p>
             </div>
         </a>  

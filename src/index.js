@@ -10,6 +10,8 @@ renderModal();
 //
 
 import './js/fetchTrendyMovie';
+import './js/modalMovie';
+import './js/searchMovies';
 //
 
 import { renderPages } from './js/paginationPages';
@@ -21,4 +23,5 @@ import { createUpBtn } from './js/upButton';
 //
 
 createUpBtn();
+
 

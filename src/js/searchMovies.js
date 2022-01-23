@@ -6,13 +6,13 @@ const searchMovies = new ApiMovie();
 const refs = {
     form: document.querySelector('.search'),
     div: document.querySelector('.main-container'),
+    container:document.querySelector('.main-container-films'),
   };
 
 refs.form.addEventListener('submit', onSearchMovies);
 
 async function onSearchMovies(e) {
     e.preventDefault();
-    refs.div.innerHTML = '';
     const query = e.currentTarget.elements.query.value.trim();
     let page = 1;
 
@@ -29,8 +29,9 @@ async function onSearchMovies(e) {
 }
 
 function renderMovies(movies) { 
-  const markup = moviesTpl(movies)
-  refs.div.insertAdjacentHTML('beforeend', markup);
+  refs.container.innerHTML=""
+  const markup = moviesTpl(movies);
+  refs.container.insertAdjacentHTML('beforeend', markup);
 }
  
 

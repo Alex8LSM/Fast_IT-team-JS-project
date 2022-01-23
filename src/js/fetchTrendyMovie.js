@@ -7,8 +7,7 @@ const card = document.querySelector('.main-container');
 const logoEl = document.querySelector('.logo');
 logoEl.addEventListener('click', onLogoClick);
 
-const filmContainer = document.createElement('div');
-  filmContainer.className = `main-container-films`;
+const filmContainer = document.querySelector('.main-container-films');
 
 renderMainPage();
 
@@ -17,7 +16,6 @@ function onLogoClick(e) {
 }
 
 export function renderMainPage() {
-  trendyMovie.page = 1;
   trendyMovie
     .putGenresAndCutReleaseDateToYear()
     .then(renderFilmsCard)
@@ -27,9 +25,9 @@ export function renderMainPage() {
 }
 
 export function renderFilmsCard(trendyMovies) {
-  card.innerHTML=""
+  filmContainer.innerHTML=""
   const markup = filmCardTpl(trendyMovies);
-  card.appendChild(filmContainer).insertAdjacentHTML('beforeend', markup);
+  filmContainer.insertAdjacentHTML('beforeend', markup);
   renderPages(trendyMovie.totalPages);
 
 }

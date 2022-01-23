@@ -1,289 +1,312 @@
 .container {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .main-page-header {
-    height: 230px;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-    background-image: linear-gradient(to right, rgb(0 0 0 / 33%), rgb(0 0 0 / 71%)), url(../images/main_page_header/header_bg.jpg);
+  height: 230px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(to right, rgb(0 0 0 / 33%), rgb(0 0 0 / 71%)),
+    url(../images/main_page_header/header_bg.jpg);
 }
 
 .header-library {
-    height: 230px;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-    @media screen and (min-width: $min-width) {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/library-320.png");
-        @media screen and(min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/library-320@2x.png");
-        }
+  height: 230px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (min-width: $min-width) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/library-320.png');
+    @media screen and(min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/library-320@2x.png');
     }
-    @media screen and(min-width: $tablet) {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/library-768.png");
-        @media screen and(min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/library-768@2x.png");
-        }
+  }
+  @media screen and(min-width: $tablet) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/library-768.png');
+    @media screen and(min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/library-768@2x.png');
     }
-    @media screen and(min-width: $desktop) {
-        width: $desktop;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/library-1024.png");
-        @media screen and(min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/library-1024@2x.png");
-        }
+  }
+  @media screen and(min-width: $desktop) {
+    width: $desktop;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/library-1024.png');
+    @media screen and(min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/library-1024@2x.png');
     }
+  }
 }
 
 a:hover {
-    animation: neon6 1.5s ease-in-out infinite alternate;
+  animation: neon6 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes neon6 {
-    from {
-        text-shadow: 0 0 10px $container-bgc, 0 0 20px $container-bgc, 0 0 30px $container-bgc, 0 0 40px $accent-color, 0 0 70px $accent-color, 0 0 80px $accent-color, 0 0 100px $accent-color, 0 0 150px $accent-color;
-    }
-    to {
-        text-shadow: 0 0 5px $container-bgc, 0 0 10px $container-bgc, 0 0 15px $container-bgc, 0 0 20px $accent-color, 0 0 35px $accent-color, 0 0 40px $accent-color, 0 0 50px $accent-color, 0 0 75px $accent-color;
-    }
+  from {
+    text-shadow: 0 0 10px $container-bgc, 0 0 20px $container-bgc, 0 0 30px $container-bgc,
+      0 0 40px $accent-color, 0 0 70px $accent-color, 0 0 80px $accent-color,
+      0 0 100px $accent-color, 0 0 150px $accent-color;
+  }
+  to {
+    text-shadow: 0 0 5px $container-bgc, 0 0 10px $container-bgc, 0 0 15px $container-bgc,
+      0 0 20px $accent-color, 0 0 35px $accent-color, 0 0 40px $accent-color, 0 0 50px $accent-color,
+      0 0 75px $accent-color;
+  }
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    &:hover {
-        fill: $accent-color;
-    }
+  display: flex;
+  align-items: center;
+  margin: 0;
+  &:hover {
+    fill: $accent-color;
+  }
 }
 
 .header-library__nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 21px;
-    padding-top: 46px;
-    padding-bottom: 46px;
-    @media screen and(min-width: $tablet) {
-        padding-left: 71px;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 21px;
+  padding-top: 46px;
+  padding-bottom: 46px;
+  @media screen and(min-width: $tablet) {
+    padding-left: 71px;
+  }
 }
 
 .header-library__title {
-    display: none;
-    margin: 0 auto;
-    @media screen and (min-width: $tablet) {
-        padding-left: 10px;
-        font-size: 30px;
-        line-height: 1.17;
-        color: $container-bgc;
-        display: block;
-    }
-    &:hover {
-        color: $accent-color;
-        animation: neon6 1.5s ease-in-out infinite alternate;
-    }
+  display: none;
+  margin: 0 auto;
+  @media screen and (min-width: $tablet) {
+    padding-left: 10px;
+    font-size: 30px;
+    line-height: 1.17;
+    color: $container-bgc;
+    display: block;
+  }
+  &:hover {
+    color: $accent-color;
+    animation: neon6 1.5s ease-in-out infinite alternate;
+  }
 }
 
 @keyframes neon6 {
-    from {
-        text-shadow: 0 0 10px $container-bgc, 0 0 20px $container-bgc, 0 0 30px $container-bgc, 0 0 40px $accent-color, 0 0 70px $accent-color, 0 0 80px $accent-color, 0 0 100px $accent-color, 0 0 150px $accent-color;
-    }
-    to {
-        text-shadow: 0 0 5px $container-bgc, 0 0 10px $container-bgc, 0 0 15px $container-bgc, 0 0 20px $accent-color, 0 0 35px $accent-color, 0 0 40px $accent-color, 0 0 50px $accent-color, 0 0 75px $accent-color;
-    }
+  from {
+    text-shadow: 0 0 10px $container-bgc, 0 0 20px $container-bgc, 0 0 30px $container-bgc,
+      0 0 40px $accent-color, 0 0 70px $accent-color, 0 0 80px $accent-color,
+      0 0 100px $accent-color, 0 0 150px $accent-color;
+  }
+  to {
+    text-shadow: 0 0 5px $container-bgc, 0 0 10px $container-bgc, 0 0 15px $container-bgc,
+      0 0 20px $accent-color, 0 0 35px $accent-color, 0 0 40px $accent-color, 0 0 50px $accent-color,
+      0 0 75px $accent-color;
+  }
 }
 
 .header-library__list {
-    display: flex;
-    padding-top: 12px;
-    padding-right: 20px;
-    @media screen and (min-width: $tablet) {
-        padding-right: 75px;
-    }
-    @media screen and (min-width: $desktop) {
-        padding-right: 71px;
-    }
+  display: flex;
+  padding-top: 12px;
+  padding-right: 20px;
+  @media screen and (min-width: $tablet) {
+    padding-right: 75px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-right: 71px;
+  }
 }
 
 .header-library__link,
 .header-library__link.current {
-    font-family: Roboto;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.17;
-    color: $container-bgc;
-    &:hover {
-        color: $accent-color;
-        animation: neon6 1.5s ease-in-out infinite alternate;
-    }
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  color: $container-bgc;
+  &:hover {
+    color: $accent-color;
+    animation: neon6 1.5s ease-in-out infinite alternate;
+  }
 }
 
 .header-library__item:not(:last-child) {
-    margin-right: 39px;
+  margin-right: 39px;
 }
 
 .header-library__link.current {
-    border-bottom: 3px solid $accent-color;
-    &:hover {
-        color: $accent-color;
-    }
+  border-bottom: 3px solid $accent-color;
+  &:hover {
+    color: $accent-color;
+  }
 }
 
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .header-library__box {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 65px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 65px;
 }
 
 .header-library__btn {
-    background-color: transparent;
-    color: $container-bgc;
-    line-height: 1.33;
-    font-family: Roboto;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.14;
-    text-align: center;
-    padding: 14px 36px 12px 36px;
-    min-width: 129px;
-    min-height: 44px;
-    cursor: pointer;
-    border: 1px solid $container-bgc;
-    border-radius: 5px;
-    &:focus,
-    &:hover,
-    &:active {
-        background-color: $accent-color;
-        border: 1px solid $accent-color;
-    }
-    &:first-child {
-        margin-right: 20px;
-    }
+  background-color: transparent;
+  color: $container-bgc;
+  line-height: 1.33;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.14;
+  text-align: center;
+  padding: 14px 36px 12px 36px;
+  min-width: 129px;
+  min-height: 44px;
+  cursor: pointer;
+  border: 1px solid $container-bgc;
+  border-radius: 5px;
+  &:focus,
+  &:hover,
+  &:active {
+    background-color: $accent-color;
+    border: 1px solid $accent-color;
+  }
+  &:first-child {
+    margin-right: 20px;
+  }
 }
 
 .header__search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search {
+  position: relative;
+  &__input {
+    font-family: Roboto;
     position: relative;
-    &__input {
-        font-family: Roboto;
-        position: relative;
-        background-color: transparent;
-        border: none;
-        border-bottom: 1px solid $container-bgc;
-        color: $container-bgc;
-    }
-    &__icon {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-image: url("../images/main_page_header/search.svg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-    &__button {
-        position: absolute;
-        background-color: transparent;
-        border: transparent;
-        border-radius: 50%;
-        height: 20px;
-        width: 20px;
-        cursor: pointer;
-    }
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $container-bgc;
+    color: $container-bgc;
+  }
+  &__icon {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-image: url('../images/main_page_header/search.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  &__button {
+    position: absolute;
+    background-color: transparent;
+    border: transparent;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+  }
 }
 
 .search__input:focus {
-    outline: none;
+  outline: none;
 }
 
 @media screen and (min-width: $min-width) {
-    .container {
-        width: 100%;
-        margin: 0 auto;
+  .container {
+    width: 100%;
+    max-width: $min-width;
+    margin: 0 auto;
+  }
+  .header__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .search {
+    &__input {
+      min-width: 280px;
+      margin-top: 40px;
     }
-    .header__search {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    &__icon {
+      left: 90%;
+      transform: translate(-100%, -50%);
     }
-    .search {
-        &__input {
-            min-width: 280px;
-            margin-top: 40px;
-        }
-        &__icon {
-            left: 90%;
-            transform: translate(-100%, -50%);
-        }
-        &__button {
-            left: 93%;
-            top: 65%;
-        }
+    &__button {
+      left: 93%;
+      top: 65%;
     }
+  }
 }
 
 @media screen and (min-width: $tablet) {
-    .container {
-        width: 100%;
-        margin: 0 auto;
+  .container {
+    width: 100%;
+    max-width: $tablet;
+    margin: 0 auto;
+  }
+  .search {
+    &__input {
+      width: 340px;
     }
-    .search {
-        &__input {
-            width: 340px;
-        }
-        &__icon {
-            left: 90%;
-            transform: translate(-100%, -50%);
-        }
-        &__button {
-            left: 93%;
-        }
+    &__icon {
+      left: 90%;
+      transform: translate(-100%, -50%);
     }
+    &__button {
+      left: 93%;
+    }
+  }
 }
 
 @media screen and (min-width: $desktop) {
-    .container {
-        width: 100%;
-        max-width: $desktop;
-        margin: 0 auto;
+  .container {
+    width: 100%;
+    max-width: $desktop;
+    margin: 0 auto;
+  }
+  .search {
+    &__input {
+      width: 340px;
     }
-    .search {
-        &__input {
-            width: 340px;
-        }
-        &__icon {
-            left: 90%;
-            transform: translate(-100%, -50%);
-        }
-        &__button {
-            left: 93%;
-        }
+    &__icon {
+      left: 90%;
+      transform: translate(-100%, -50%);
     }
+    &__button {
+      left: 93%;
+    }
+  }
 }

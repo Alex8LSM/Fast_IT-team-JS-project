@@ -13,8 +13,7 @@ export default class ApiMovie {
     const fetch = await axios.get(trendyMovieUrl);
     const trendyMovies = fetch.data.results;
     this.totalPages=fetch.data.total_pages
-    console.log(this.totalPages);
-
+    
     return trendyMovies;
   }
 

@@ -6,7 +6,13 @@
             </svg>
      </button>
   <div class="image-box">
-    <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="movies" class="image-box__picture"/>
+    {{#if poster_path}}
+    <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="movie photo" class="image-box__picture"/>
+  {{/if}}
+  {{#unless poster_path}}
+  <img src="https://stringfixer.com/files/325551406.jpg"
+   alt="movie photo">
+  {{/unless}}
   </div>
     <div class="modal-description">
  <h2 class="modal-description__title">{{original_title}}</h2>

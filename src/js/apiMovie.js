@@ -5,15 +5,15 @@ const axios = require('axios');
 export default class ApiMovie {
   constructor() {
     this.page = 1;
+    this.totalPages = 100;
   }
 
   async fetchTrendyMovie() {
-    const trendyMovieUrl = `${BASE_URL}trending/movie/day?api_key=${KEY}`;
+    const trendyMovieUrl = `${BASE_URL}trending/movie/day?api_key=${KEY}&page=${this.page}`;
     const fetch = await axios.get(trendyMovieUrl);
     const trendyMovies = fetch.data.results;
-
-    this.incrementPage();
-
+    this.totalPages=fetch.data.total_pages
+    
     return trendyMovies;
   }
 
@@ -31,7 +31,7 @@ export default class ApiMovie {
         return data.map(movie => ({
           ...movie,
           release_date: movie.release_date.slice(0, 4),
-          genres: movie.genre_ids.map(id => listOfGenres.filter(genre => genre.id === id)).flat(),
+          genres: movie.genre_ids.slice(0,3).map(id => listOfGenres.filter(genre => genre.id === id)).flat(),
         }));
       });
     });
@@ -43,5 +43,9 @@ export default class ApiMovie {
 
   resetPage() {
     this.page = 1;
+  }
+
+  pageSet(num) {
+    this.page=num
   }
 }

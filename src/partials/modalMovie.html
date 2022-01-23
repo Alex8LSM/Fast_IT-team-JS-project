@@ -1,4 +1,50 @@
 
-<div class="backdrop js-backdrop"></div>
+<div class="backdrop js-backdrop">
+   <article class="modal">
+     <button type="button" class="modal__button--close" data-action="close-modal">
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 15L15 1 M1 1L15 15" stroke="#FF6B01" stroke-width="2"/>
+            </svg>
+     </button>
+  <div class="image-box">
+    {{#if poster_path}}
+    <img src="" alt="movie photo" class="image-box__picture"/>
+  {{/if}}
+  {{#unless poster_path}}
+  <img src=""
+   alt="movie photo">
+  {{/unless}}
+  </div>
+    <div class="modal-description">
+ <h2 class="modal-description__title">{{original_title}}</h2>
+<div class="modal-data">
+  <div>
+    <p class="modal-data__item">Vote / Votes</p>
+    <p class="modal-data__item">Popularity</p>
+    <p class="modal-data__item">Original Title</p>
+    <p class="modal-data__item">Genre</p>
+  </div>
+  <div>
+    <p class="modal-data__value">
+       <span class="modal-data__value--vote">{{vote_average}}</span>
+       <span class="modal-data__value--slash">/</span>
+       <span class="modal-data__value">{{vote_count}}</span>
+  </p>
+    <p class="modal-data__value">{{popularity}}</p>
+    <p class="modal-data__value">{{original_title}}</p>
+     {{#each genres}}
+    <p class="modal-data__value">{{this.name}}</p>
+      {{/each}}
+  </div>
+</div>
+   <h3 class="modal-description__title--about">ABOUT</h3>
+<p class="modal-description__content">{{overview}}</p>
+ <div class="box-button">
+     <button type="button" class="box-button__add watched-btn">add to Watched</button>
+     <button type="button" class="box-button__add queued-btn">add to queue</button>
+ </div>
+    </div>
+ </article>  
+</div>
 
 

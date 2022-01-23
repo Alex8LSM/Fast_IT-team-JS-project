@@ -1,0 +1,15 @@
+.main-container-films {
+  width: 100%;
+
+  @media screen and (min-width: $tablet) {
+    display: grid;
+    grid-template-columns: 294px 294px;
+    grid-gap: 30px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: grid;
+    grid-template-columns: 274px 274px 274px;
+    grid-gap: 30px;
+  }
+}

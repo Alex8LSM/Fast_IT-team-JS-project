@@ -10,6 +10,8 @@ renderModal();
 //
 
 import './js/fetchTrendyMovie';
+import './js/modalMovie';
+import './js/searchMovies';
 //
 
 import { createUpBtn } from './js/upButton';
@@ -19,3 +21,4 @@ createUpBtn();
 //
 import spiner from './js/spiner';
 spiner();
+

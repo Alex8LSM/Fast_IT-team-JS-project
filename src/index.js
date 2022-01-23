@@ -4,9 +4,7 @@ import { headerJS } from './js/header-new-lib.js';
 
 headerJS();
 //
-import { renderModal } from './js/our-team-modal.js';
-//
-renderModal();
+import './js/our-team-modal.js';
 //
 
 import './js/fetchTrendyMovie';

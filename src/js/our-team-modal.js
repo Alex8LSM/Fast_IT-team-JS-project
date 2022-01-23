@@ -1,5 +1,3 @@
-function renderModal() {
-
   const refs = {
     show_Team: document.querySelector('[data-modal-open]'),
     btnModalclose: document.querySelector('[data-modal-close]'),
@@ -38,5 +36,3 @@ function renderModal() {
       onModalClose();
     }
   }
-}
-export { renderModal };

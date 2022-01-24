@@ -5,14 +5,20 @@ import { renderPages } from './paginationPages';
 
 const card = document.querySelector('.main-container');
 const logoEl = document.querySelector('.logo');
+const homeEl = document.getElementById('userHome');
 logoEl.addEventListener('click', onLogoClick);
+homeEl.addEventListener('click', onHomeClick);
 
 const filmContainer = document.querySelector('.main-container-films');
 
 renderMainPage();
 
-export function onLogoClick(e) {
-    renderMainPage();
+function onHomeClick(e) {
+  renderMainPage();
+}
+function onLogoClick(e) {
+  renderMainPage();
+
 }
 
 export function renderMainPage() {
@@ -25,9 +31,11 @@ export function renderMainPage() {
 }
 
 export function renderFilmsCard(trendyMovies) {
-    filmContainer.innerHTML = ""
-    const markup = filmCardTpl(trendyMovies);
-    filmContainer.insertAdjacentHTML('beforeend', markup);
-    renderPages(trendyMovie.totalPages);
 
+  filmContainer.innerHTML = '';
+  const markup = filmCardTpl(trendyMovies);
+  filmContainer.insertAdjacentHTML('beforeend', markup);
+  renderPages(trendyMovie.totalPages);
 }
+
+

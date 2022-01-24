@@ -7,6 +7,6 @@ export default function spiner() {
     setTimeout(() => {
       diziSpiner.remove();
       mainContainer.classList.remove('hide-dizzy');
-    }, 1000);
+    }, 500);
   });
 }

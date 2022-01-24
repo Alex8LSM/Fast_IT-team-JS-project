@@ -1,33 +1,31 @@
 import renderTpl from '../partials/templates/filmCard.hbs';
 
     const refs = {
-        watched: document.querySelector('.header-watched'),
-        queue: document.querySelector('.header-queue'),
+        watchedBtn: document.querySelector('.header-watched'),
+        queueBtn: document.querySelector('.header-queue'),
         container: document.querySelector('.main-container')
     }
 
-    refs.queue.addEventListener('click', onQueueClick);
-    refs.watched.addEventListener('click', onWatchedClick);
+    refs.queueBtn.addEventListener('click', onQueueBtnClick);
+    refs.watchedBtn.addEventListener('click', onWatchedBtnClick);
 
 
-async function onQueueClick() {
-    console.log(refs.queue);
+async function onQueueBtnClick() {
   
-    const QueueIds = JSON.parse(localStorage.getItem('queue'));
+  const QueueIds = JSON.parse(localStorage.getItem('queue'));
   
-    const moviesQueueList = [];
+  const moviesQueueList = [];
   
-    if (QueueIds !== null) {
-      for (const id of QueueIds) {
+  if (QueueIds !== null) {
+    for (const id of QueueIds) {
         moviesQueueList.push(await fetchMovie(id));
-      }
-  
-      markupMovies(moviesQueueList);
     }
+  
+    markupMovies(moviesQueueList);
+  }
 }
 
-async function onWatchedClick() {
-  console.log(refs.watched);
+async function onWatchedBtnClick() {
 
   const WatchedIds = JSON.parse(localStorage.getItem('watched'));
 
@@ -35,7 +33,7 @@ async function onWatchedClick() {
   
   if (WatchedIds !== null) {
     for (const id of WatchedIds) {
-      moviesList.push(await fetchMovie(id));
+      moviesWatchedList.push(await fetchMovie(id));
     }
 
     markupMovies(moviesWatchedList);
@@ -57,4 +55,4 @@ async function fetchMovie(id) {
     return await response.json();
 }
 
-export { onQueueClick, onWatchedClick };
+export { onQueueBtnClick, onWatchedBtnClick };

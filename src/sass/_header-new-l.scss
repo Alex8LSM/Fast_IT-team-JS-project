@@ -58,7 +58,7 @@
   }
 }
 
-a:hover {
+.header a:hover {
   animation: neon6 1.5s ease-in-out infinite alternate;
 }
 
@@ -85,14 +85,14 @@ a:hover {
 }
 
 .header-library__nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 21px;
-    padding-top: 46px;
-    @media screen and(min-width: $tablet) {
-        padding-left: 71px;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 21px;
+  padding-top: 46px;
+  @media screen and(min-width: $tablet) {
+    padding-left: 71px;
+  }
 }
 
 .header-library__title {
@@ -172,9 +172,9 @@ a:hover {
 }
 
 .header-library__box {
-    display: flex;
-    justify-content: center;
-    margin-top: 46px;
+  display: flex;
+  justify-content: center;
+  margin-top: 46px;
 }
 
 .header-library__btn {

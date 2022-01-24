@@ -1,9 +1,14 @@
+import { onLogoClick } from './fetchTrendyMovie';
+
 function headerJS() {
     const headerPage = document.getElementById('headerMainPage');
     const libraryLink = document.getElementById('userlibrary');
     const homeLink = document.getElementById('userHome');
     const headerBtn = document.getElementById('headerButtons');
     const headerSearch = document.getElementById('headerSearch');
+    const logoEl = document.getElementById('logo-link');
+
+    logoEl.addEventListener('click', onLogoClick);
 
     function onClickLibrary(e) {
         e.preventDefault();

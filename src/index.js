@@ -19,4 +19,7 @@ createUpBtn();
 import spiner from './js/spiner';
 spiner();
 
+import './js/myLibrary.js';
+
 import './js/localStorage';
+

@@ -62,7 +62,7 @@ body.show-modal .modal {
 }
 .image-box {
     max-width: 240px;
-    height: auto;
+    height: 357px;
     overflow: hidden;
     margin-bottom: 30px;
     border-radius: 5px;
@@ -74,10 +74,12 @@ body.show-modal .modal {
  }
     @media screen and (min-width: $tablet) {
         max-width: 264px;
+        height: 374px;
         margin-right: 30px;
     }
     @media screen and (min-width: $desktop) {
        max-width: 396px;
+       height: 478px;
     }
 }
 .modal-description {

@@ -1,3 +1,7 @@
+import ApiMovie from '/js/apiMovie';
+const trendyMovie = new ApiMovie();
+import { renderFilmsCard } from './fetchTrendyMovie'
+
 const pageNumbers = (total, max, current) => {
   const half = Math.floor(max / 2);
   let to = max;
@@ -14,7 +18,7 @@ const pageNumbers = (total, max, current) => {
 }
 
 
-function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage = 1) {
+function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage = trendyMovie.page) {
   let pages = pageNumbers(totalPages, maxPagesVisible, currentPage);
   let currentPageBtn = null;
   const buttons = new Map();
@@ -112,7 +116,7 @@ buttons.set(
    renderPages()
   })
 
-export function renderPages() {
+export function renderPages(totalPages) {
   let swCurrent = window.innerWidth;
   if (swCurrent < 767) {
     
@@ -123,12 +127,20 @@ export function renderPages() {
       document.querySelector(".pagination-buttons-desktop").remove()
     }
       
-      const paginationButtons = new PaginationButton(1000, 3,"-mob");
+      const paginationButtons = new PaginationButton(totalPages, 3,"-mob");
 
       paginationButtons.render();
 
       paginationButtons.onChange(e => {
-        let pageCurent=e.target.value
+        let pageCurent = e.target.value;
+        trendyMovie.pageSet(pageCurent);
+        console.log(trendyMovie.page);
+        trendyMovie
+        .putGenresAndCutReleaseDateToYear()
+        .then(renderFilmsCard)
+        .catch(error => {
+            console.log(error);
+          });
       });
     
   } else {
@@ -139,12 +151,19 @@ export function renderPages() {
       document.querySelector(".pagination-buttons-mob").remove()
     }
       
-      const paginationButtons = new PaginationButton(1000, 5,"-desktop");
+      const paginationButtons = new PaginationButton(totalPages, 5,"-desktop");
 
       paginationButtons.render();
 
       paginationButtons.onChange(e => {
-        let pageCurent=e.target.value
+        let pageCurent = e.target.value;
+        trendyMovie.pageSet(pageCurent);
+        trendyMovie
+        .putGenresAndCutReleaseDateToYear()
+        .then(renderFilmsCard)
+        .catch(error => {
+            console.log(error);
+          });
       });
     
   }

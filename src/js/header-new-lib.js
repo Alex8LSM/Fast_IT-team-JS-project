@@ -1,5 +1,4 @@
 import { onLogoClick } from './fetchTrendyMovie';
-import { removePagination } from './paginationPages';
 
 function headerJS() {
 
@@ -14,7 +13,6 @@ function headerJS() {
 
     function onClickLibrary(e) {
         e.preventDefault();
-        removePagination();
         headerPage.classList.remove('main-page-header');
         headerPage.classList.add('header-library');
         headerBtn.classList.remove('visually-hidden');

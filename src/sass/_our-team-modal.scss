@@ -1,11 +1,3 @@
-/*our-team-modal*/
-$title-color: #212121; // Основний колір заголовків
-$accent: #2196f3; // колір акценту (виділення посилань і кнопок)
-$card-bgc: #ffffff; // Основний колір фону секцій
-$active-icon: #ffffff; // Колір тексту героя */
-$inactive-icon: #afb1b8; // Оссновний колір іконок
-$anim-func: cubic-bezier(0.4, 0, 0.2, 1); //
-$anim-time: 250ms; //
 
 .scroll-lock {
   overflow: hidden;
@@ -53,7 +45,7 @@ $anim-time: 250ms; //
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: $body-bgc;
     &:hover {
-      background-color: $accent;
+      background-color: $accent-color;
     }
 
     @media screen and (min-width: $desktop) {
@@ -64,12 +56,22 @@ $anim-time: 250ms; //
 
 .our-team {
 
+  &__icon {
+    width: 40px;
+    height: 40px;
+  }
+
   &__first-title {
     color: $title-color;
     font-size: 28px;
     line-height: 1.172;
-    font-weight: 700;
-    text-align: center;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: neon6 1.5s ease-in-out infinite alternate;
+
     @media screen and (min-width: $desktop) {
       font-size: 36px;
     }
@@ -130,18 +132,9 @@ $anim-time: 250ms; //
   }
 }
 .team-card {
-  padding: 15px 0 15px 0;
-  &__social-icons {
-    align-items: center;
-    justify-content: center;
-    margin-top: 16px;
-
-    &__social-icon {
-      transition: fill $anim-time $anim-func;
-    }
-  }
-
+  padding: 10px 0 10px 0;
   &__title{
+    font-weight: 500;
     font-size: 16px;
     line-height: 1.188;
     text-align: center;

@@ -24,12 +24,6 @@ function headerJS() {
         filmContainer.innerHTML = '';
 
         emptyContainer();
-
-        const paginationEmpty = document.querySelector('.pagination-buttons-desktop');
-        paginationEmpty.classList.add('visually-hidden');
-
-        const paginationEmptyMob = document.querySelector(".pagination-buttons-mob");
-        paginationEmptyMob.classList.add('visually-hidden');
     }
     libraryLink.addEventListener('click', onClickLibrary);
 

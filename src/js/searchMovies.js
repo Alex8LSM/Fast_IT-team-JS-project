@@ -2,6 +2,8 @@ import apiSearch from './apiMoviesSearch';
 import moviesTpl from '../partials/templates/filmCard.hbs';
 import ApiMovie from '/js/apiMovie';
 const searchMovies = new ApiMovie();
+import Notiflix from 'notiflix';
+
   
 const refs = {
     form: document.querySelector('.search'),
@@ -16,6 +18,12 @@ async function onSearchMovies(e) {
     const query = e.currentTarget.elements.query.value.trim();
     let page = 1;
 
+try {
+    if(query.length <= 1) {
+     Notiflix.Notify.failure(`Search result not successful.Enter the correct movie name.`);
+     return;
+    }
+
    const movies = await apiSearch.fetchMoviesSearch(query, page).then(data => {
    return searchMovies.fetchGenres().then(listOfGenres => {
      return data.map(movie => ({
@@ -26,6 +34,8 @@ async function onSearchMovies(e) {
    });
   });
    renderMovies(movies);
+} catch (error){
+}
 }
 
 function renderMovies(movies) { 

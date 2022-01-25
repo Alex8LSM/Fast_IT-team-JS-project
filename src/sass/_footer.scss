@@ -1,5 +1,5 @@
 .footer {
-  max-width: 767px;
+  max-width: $min-width;
   margin: 0 auto;
   height: 100px;
   background-color: $footer-background-color;
@@ -7,18 +7,26 @@
   font-size: 14px;
   line-height: 1, 14;
   color: $footer-text-color;
-  @media screen and (min-width: 768px) {
-    max-width: 1024px;
+
+  @media screen and (min-width: $mobile) {
+    max-width: $mobile;
+  }
+
+  @media screen and (min-width: $tablet) {
+    max-width: $tablet;
     height: 77px;
     font-size: 16px;
     line-height: 1, 19;
+  }
+  @media screen and (min-width: $desktop) {
+    max-width: $desktop;
   }
 }
 
 .copyright-box {
   padding: 29px 0 29px 0;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,26 +36,26 @@
 .copyright-box__text,
 .copyright-box__dev {
   text-align: center;
-  text-shadow: 0px 4px 4px #00000040;
 }
 
 .copyright-box__text {
   margin: 0 auto 10px auto;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     margin: 0 0 0 auto;
   }
 }
 
 .copyright-box__dev {
   margin: 0 auto 0 auto;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     margin: 0 auto 0 3px;
   }
 }
 
 .copyright-box__dev--underlined {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .copyright-box__svg {

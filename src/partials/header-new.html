@@ -1,8 +1,8 @@
 <header class="header">
     <div class="container header-container main-page-header" id="headerMainPage">
         <nav class="header-library__nav">
-            <a class="logo" href="">
-                <svg class="header-library__icon" width="24" height="24"><use href="./images/icon.svg#icon-film"></use></svg>
+            <a class="logo" href="" id="logo-link">
+                <svg class="header-library__icon" width="24" height="24"><use href="./images/sprite.svg#film"></use></svg>
                 <h1 class="header-library__title">Filmoteka</h1>
             </a>
             <ul class="header-library__list">
@@ -14,7 +14,7 @@
         </nav>
         <div class="header__search" id="headerSearch">
             <form action="#" class="search">
-                <input type="text" class="search__input" placeholder="Поиск фильмов" />
+                <input type="text" name="query" class="search__input" placeholder="Поиск фильмов" />
                 <button class="search__button" type="submit">
                 <svg class="search__icon">
                   <use src="./images/main_page_header/search 2.svg"></use>
@@ -23,8 +23,8 @@
             </form>
         </div>
         <div class="header-library__box visually-hidden" id="headerButtons">
-            <button class="header-library__btn">WATCHED</button>
-            <button class="header-library__btn">QUEUE</button>
+            <button class="header-library__btn header-watched">WATCHED</button>
+            <button class="header-library__btn header-queue">QUEUE</button>
         </div>
     </div>
 </header>

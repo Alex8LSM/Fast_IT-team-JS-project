@@ -1,5 +1,5 @@
 /*our-team-modal*/
-$title-color: #212121; // Основний колір заголовків
+$title-color: #ffffff; // Основний колір заголовків
 $accent: #2196f3; // колір акценту (виділення посилань і кнопок)
 $card-bgc: #ffffff; // Основний колір фону секцій
 $active-icon: #ffffff; // Колір тексту героя */
@@ -64,12 +64,22 @@ $anim-time: 250ms; //
 
 .our-team {
 
+  &__icon {
+    width: 40px;
+    height: 40px;
+  }
+
   &__first-title {
     color: $title-color;
     font-size: 28px;
     line-height: 1.172;
-    font-weight: 700;
-    text-align: center;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: neon6 1.5s ease-in-out infinite alternate;
+
     @media screen and (min-width: $desktop) {
       font-size: 36px;
     }
@@ -130,18 +140,9 @@ $anim-time: 250ms; //
   }
 }
 .team-card {
-  padding: 15px 0 15px 0;
-  &__social-icons {
-    align-items: center;
-    justify-content: center;
-    margin-top: 16px;
-
-    &__social-icon {
-      transition: fill $anim-time $anim-func;
-    }
-  }
-
+  padding: 10px 0 10px 0;
   &__title{
+    font-weight: 500;
     font-size: 16px;
     line-height: 1.188;
     text-align: center;

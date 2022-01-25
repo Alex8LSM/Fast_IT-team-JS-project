@@ -17,7 +17,6 @@ const pageNumbers = (total, max, current) => {
   return Array.from({length: max}, (_, i) => (i + 1) + from);
 }
 
-
 export function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage) {
   let pages = pageNumbers(totalPages, maxPagesVisible, currentPage);
   let currentPageBtn = null;

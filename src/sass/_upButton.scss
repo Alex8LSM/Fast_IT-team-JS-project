@@ -11,6 +11,9 @@
   cursor: pointer;
   background: url(../images/icon_up_arrow.png) no-repeat;
   background-size: cover;
+  @media screen and (min-width: $desktop) {
+    right: 60px;
+  }
 }
 
 .showUpBtn {

@@ -4,11 +4,8 @@ import { headerJS } from './js/header-new-lib.js';
 
 headerJS();
 //
-import { renderModal } from './js/our-team-modal.js';
+import './js/our-team-modal';
 //
-renderModal();
-//
-
 import './js/fetchTrendyMovie';
 import './js/modalMovie';
 import './js/searchMovies';
@@ -23,4 +20,6 @@ import spiner from './js/spiner';
 spiner();
 
 import './js/myLibrary.js';
+
+import './js/localStorage';
 

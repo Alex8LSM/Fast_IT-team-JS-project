@@ -1,5 +1,5 @@
 
-  <article class="modal">
+  <article class="modal film-id" id="{{id}}">
      <button type="button" class="modal__button--close" data-action="close-modal">
         <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 15L15 1 M1 1L15 15" stroke="#FF6B01" stroke-width="2"/>
@@ -39,8 +39,8 @@
    <h3 class="modal-description__title--about">ABOUT</h3>
 <p class="modal-description__content">{{overview}}</p>
  <div class="box-button">
-     <button type="button" class="box-button__add">add to Watched</button>
-     <button type="button" class="box-button__add">add to queue</button>
+     <button type="button" class="box-button__add watched" name="watched">add to Watched</button>
+     <button type="button" class="box-button__add queue" name="queue">add to queue</button>
  </div>
     </div>
  </article>

@@ -14,7 +14,7 @@ const refs = {
 async function onOpenModal(e) {
   e.preventDefault();
 
-  if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'H2' && e.target.nodeName !== 'P') {
+  if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'H2') {
    return;
   }
 

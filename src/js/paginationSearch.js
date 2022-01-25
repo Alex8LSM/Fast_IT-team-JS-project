@@ -1,6 +1,6 @@
 import ApiMovie from './apiMovie';
 const trendyMovie = new ApiMovie();
-import { renderFilmsCard } from './fetchTrendyMovie';
+import { renderMovies } from './searchMovies';
 
 const pageNumbers = (total, max, current) => {
   const half = Math.floor(max / 2);
@@ -17,7 +17,8 @@ const pageNumbers = (total, max, current) => {
   return Array.from({length: max}, (_, i) => (i + 1) + from);
 }
 
-function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage = trendyMovie.page) {
+
+export function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage) {
   let pages = pageNumbers(totalPages, maxPagesVisible, currentPage);
   let currentPageBtn = null;
   const buttons = new Map();
@@ -34,7 +35,7 @@ function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage
   const createAndSetupButton = (label = '', cls = '', disabled = false, handleClick) => {
     const buttonElement = document.createElement('button');
     buttonElement.textContent = label;
-    buttonElement.className = `page-btn ${cls}`;
+    buttonElement.className = `page-btn-s ${cls}`;
     buttonElement.disabled = disabled;
     buttonElement.addEventListener('click', e => {
       handleClick(e);
@@ -108,58 +109,4 @@ buttons.set(
   this.onChange = (handler) => {
     paginationButtonContainer.addEventListener('change', handler);
   }
-}
-
-  window.addEventListener('resize', () => {
-   renderPages()
-  })
-
-export function renderPages(totalPages) {
-  let swCurrent = window.innerWidth;
-  if (swCurrent < 767) {
-    
-    if (document.querySelector(".pagination-buttons-mob")) { return }
-
-    if (document.querySelector(".pagination-buttons-desktop")) {
-      document.querySelector(".pagination-buttons-desktop").innerHTML = ""
-      document.querySelector(".pagination-buttons-desktop").remove()
-    }
-      
-      const paginationButtons = new PaginationButton(totalPages, 3,"-mob",trendyMovie.page);
-
-      paginationButtons.render();
-      
-      paginationButtons.onChange(e => {
-        let pageCurent = e.target.value;
-        paginMain(pageCurent)
-      });
-    
-  } else {
-    
-    if (document.querySelector(".pagination-buttons-desktop")) { return };
-    if (document.querySelector(".pagination-buttons-mob")) {
-      document.querySelector(".pagination-buttons-mob").innerHTML = ""
-      document.querySelector(".pagination-buttons-mob").remove()
-    }
-      
-      const paginationButtons = new PaginationButton(totalPages, 5,"-desktop",trendyMovie.page);
-
-      paginationButtons.render();
-
-      paginationButtons.onChange(e => {
-        let pageCurent = e.target.value;
-        paginMain(pageCurent)
-      });
-    
-  }
-}
-
-function paginMain(pageCurent) {
-        trendyMovie.pageSet(pageCurent);
-        trendyMovie
-        .putGenresAndCutReleaseDateToYear()
-        .then(renderFilmsCard)
-        .catch(error => {
-        console.log(error);
-  });
 }

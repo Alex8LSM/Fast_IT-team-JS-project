@@ -17,8 +17,7 @@ const pageNumbers = (total, max, current) => {
   return Array.from({length: max}, (_, i) => (i + 1) + from);
 }
 
-
-function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage = trendyMovie.page) {
+export function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, currentPage = trendyMovie.page) {
   let pages = pageNumbers(totalPages, maxPagesVisible, currentPage);
   let currentPageBtn = null;
   const buttons = new Map();
@@ -109,62 +108,19 @@ buttons.set(
   this.onChange = (handler) => {
     paginationButtonContainer.addEventListener('change', handler);
   }
+
+  this.removePagination = (paginationEl = document.querySelector(".pagination-buttons-mob")) => {
+    const allBtn = paginationEl.childNodes;
+    console.log(allBtn);
+    allBtn.forEach(element => {
+      element.removeEventListener('click', handler)
+    });
+  }
 }
 
-
-  window.addEventListener('resize', () => {
-   renderPages()
-  })
-
-export function renderPages(totalPages) {
-  let swCurrent = window.innerWidth;
-  if (swCurrent < 767) {
-    
-    if (document.querySelector(".pagination-buttons-mob")) { return }
-
-    if (document.querySelector(".pagination-buttons-desktop")) {
-      document.querySelector(".pagination-buttons-desktop").innerHTML = ""
-      document.querySelector(".pagination-buttons-desktop").remove()
-    }
-      
-      const paginationButtons = new PaginationButton(totalPages, 3,"-mob");
-
-      paginationButtons.render();
-
-      paginationButtons.onChange(e => {
-        let pageCurent = e.target.value;
-        trendyMovie.pageSet(pageCurent);
-        console.log(trendyMovie.page);
-        trendyMovie
-        .putGenresAndCutReleaseDateToYear()
-        .then(renderFilmsCard)
-        .catch(error => {
-            console.log(error);
-          });
-      });
-    
-  } else {
-    
-    if (document.querySelector(".pagination-buttons-desktop")) { return };
-    if (document.querySelector(".pagination-buttons-mob")) {
-      document.querySelector(".pagination-buttons-mob").innerHTML = ""
-      document.querySelector(".pagination-buttons-mob").remove()
-    }
-      
-      const paginationButtons = new PaginationButton(totalPages, 5,"-desktop");
-
-      paginationButtons.render();
-
-      paginationButtons.onChange(e => {
-        let pageCurent = e.target.value;
-        trendyMovie.pageSet(pageCurent);
-        trendyMovie
-        .putGenresAndCutReleaseDateToYear()
-        .then(renderFilmsCard)
-        .catch(error => {
-            console.log(error);
-          });
-      });
-    
-  }
+export function removePagination() {
+if (document.querySelector('.pagination-buttons-set')) {
+    document.querySelector(".pagination-buttons-set").innerHTML = ""
+    document.querySelector(".pagination-buttons-set").remove()
+  }  
 }

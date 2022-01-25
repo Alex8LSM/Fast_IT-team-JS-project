@@ -13,19 +13,15 @@ const refs = {
     container: document.querySelector('.main-container-films'),
 };
 
-refs.form.addEventListener('submit', (e) => {
+refs.form.addEventListener('submit', onSearchMovies);
+
+function onSearchMovies(e) {
   e.preventDefault();
   pageOnRender = 1;
   searchMovi = e.currentTarget.elements.query.value.trim();
-  onSearchMovies();
-  console.log(pageOnRender);
-} );
-
-function onSearchMovies() {
   apiMoviesRender()
   window.addEventListener('resize', () => {
-    renderPagesSearch()
-    console.log(pageOnRender);
+   renderPagesSearch()
 })
 }
 
@@ -52,7 +48,7 @@ function renderMovies(movies) {
 }
 
 function renderPagesSearch() {
-    // if(totalPagesSearch<2){return}
+
     if (document.querySelector(".pagination-buttons-desktop")) {
       document.querySelector(".pagination-buttons-desktop").innerHTML = ""
       document.querySelector(".pagination-buttons-desktop").remove()
@@ -74,7 +70,7 @@ function renderPagesSearch() {
       document.querySelector(".pagination-buttons-desktopS").remove()
     }
       
-      const paginationButtons = new PaginationButton(totalPagesSearch, 3,"-mobS", pageOnRender);
+      const paginationButtons = new PaginationButton(totalPagesSearch, 3,"-mobS",pageOnRender);
 
       paginationButtons.render();
      
@@ -119,4 +115,3 @@ async function paginSearchPage() {
   });
    renderMovies(movies);
 }
-

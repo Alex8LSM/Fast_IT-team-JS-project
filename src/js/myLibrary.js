@@ -44,8 +44,6 @@ async function onWatchedBtnClick() {
 
 function markupMovies(movies) {
   filmContainer.innerHTML = '';
-  const paginationEmpty = document.querySelector('.pagination-buttons-desktop');
-  paginationEmpty.classList.add('visually-hidden');
   const markup = filmCardTpl(movies);
   filmContainer.insertAdjacentHTML('beforeend', markup);
 }

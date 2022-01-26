@@ -1,6 +1,13 @@
 const axios = require('axios');
 import { removePagination } from './paginationPages';
 import filmCardTpl from '../partials/templates/filmCard.hbs';
+const watchedBtn = document.querySelector('.header-watched');
+const queueBtn = document.querySelector('.header-queue');
+const filmContainer = document.querySelector('.main-container-films');
+
+
+queueBtn.addEventListener('click', onQueueBtnClick);
+watchedBtn.addEventListener('click', onWatchedBtnClick);
 
   const watchedBtn = document.querySelector('.header-watched');
   const queueBtn = document.querySelector('.header-queue');
@@ -35,6 +42,7 @@ async function onWatchedBtnClick() {
   }
 }
 
+
 async function onQueueBtnClick() {
   queueBtn.classList.add('active');
   watchedBtn.classList.remove('active');
@@ -42,22 +50,44 @@ async function onQueueBtnClick() {
   const STORAGE_KEY = 'queue';
 
   const QueueIds = JSON.parse(localStorage.getItem(STORAGE_KEY));
+
+
+
   if (!QueueIds) {
     filmContainer.innerHTML = '';
     emptyTitle.classList.add('visible');
     emptyImage.classList.add('visible');
   }
   
+
   const moviesQueueList = [];
-  
+
   if (QueueIds !== null) {
     for (const id of QueueIds) {
       moviesQueueList.push(await fetchMovie(id));
     }
-  
+
     markupMovies(moviesQueueList);
   }
 }
+
+
+async function onWatchedBtnClick() {
+  const STORAGE_KEY = 'watched';
+
+  const WatchedIds = JSON.parse(localStorage.getItem(STORAGE_KEY));
+
+  const moviesWatchedList = [];
+
+  if (WatchedIds !== null) {
+    for (const id of WatchedIds) {
+      moviesWatchedList.push(await fetchMovie(id));
+    }
+
+    markupMovies(moviesWatchedList);
+  }
+}
+
 
 function markupMovies(movies) {
   removePagination();
@@ -68,7 +98,6 @@ function markupMovies(movies) {
 }
 
 async function fetchMovie(id) {
-
   const API_KEY = '61d280fbc4e0ab3fee827783c53f7600';
   const BASE_URL = 'https://api.themoviedb.org/3/';
 

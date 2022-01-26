@@ -9,6 +9,8 @@
   border-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
+  z-index: 100;
 }
 .login:hover {
   background-color: #ff6b08;
@@ -28,7 +30,19 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.692);
 }
-
+.singIn-login {
+  position: relative;
+  display: none;
+  max-height: 100vh;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.692);
+}
 .modal-content {
   display: flex;
   flex-direction: column;
@@ -116,6 +130,7 @@
   font-size: 12px;
   line-height: 1.14;
   text-align: center;
+  overflow: hidden;
 }
 .auth-btn:hover {
   background-color: rgba(228, 83, 0, 0.749);
@@ -127,4 +142,68 @@
   font-weight: 400px;
   font-size: 14px;
   line-height: 16px;
+}
+
+.btn-auth:hover .rightbt {
+  right: -50px;
+  width: 40px;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+}
+.btn-auth:hover .leftbt {
+  left: -50px;
+  width: 40px;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+}
+.btn-auth {
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+.rightbt {
+  display: flex;
+  z-index: -100;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  color: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.leftbt {
+  display: flex;
+  color: transparent;
+  overflow: hidden;
+  z-index: -100;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.innertext {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-style: Roboto;
+  font-weight: 500;
+  font-size: 14px;
 }

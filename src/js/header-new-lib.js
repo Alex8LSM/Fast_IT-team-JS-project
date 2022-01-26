@@ -25,7 +25,7 @@ function onClickLibrary(e) {
     filmContainer.innerHTML = '';
 
     emptyContainer();
-}
+  }
   libraryLink.addEventListener('click', onClickLibrary);
 
    function emptyContainer() {

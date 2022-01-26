@@ -6,6 +6,7 @@ import apiMovieId from './apiMovieModal';
 const refs = {
       openModalBtn: document.querySelector('.main-container'),
       backdrop: document.querySelector('.js-backdrop'),
+      lockScroll: document.querySelector('[data-lockScroll]'),
         };
         
       refs.openModalBtn.addEventListener('click', onOpenModal);
@@ -22,6 +23,7 @@ async function onOpenModal(e) {
     let id = e.target.dataset.id;
     const movie = await apiMovieId.fetchMoviesById(id);
     renderMovie(movie);
+    refs.lockScroll.classList.add('scroll-lock');
 
     const watchedBtn = document.querySelector('.watched');
     const queueBtn = document.querySelector('.queue');
@@ -55,6 +57,7 @@ function renderMovie(movie) {
 function onCloseModal() {
     window.removeEventListener('keydown', onEscKeyPress);
     document.body.classList.remove('show-modal');
+    refs.lockScroll.classList.remove('scroll-lock');
       }
       
 function onBackdropClick(event) {

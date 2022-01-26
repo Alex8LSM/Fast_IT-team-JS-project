@@ -5,44 +5,32 @@ const watchedBtn = document.querySelector('.header-watched');
 const queueBtn = document.querySelector('.header-queue');
 const filmContainer = document.querySelector('.main-container-films');
 
-
 queueBtn.addEventListener('click', onQueueBtnClick);
 watchedBtn.addEventListener('click', onWatchedBtnClick);
 
-  const watchedBtn = document.querySelector('.header-watched');
-  const queueBtn = document.querySelector('.header-queue');
-  const filmContainer = document.querySelector('.main-container-films');
-  const emptyTitle = document.querySelector('.container-empty__title');
-  const emptyImage = document.querySelector('.container-empty__image');
-  
-  queueBtn.addEventListener('click', onQueueBtnClick);
-  watchedBtn.addEventListener('click', onWatchedBtnClick);
-  
+const emptyTitle = document.querySelector('.container-empty__title');
+const emptyImage = document.querySelector('.container-empty__image');
+
 async function onWatchedBtnClick() {
   watchedBtn.classList.add('active');
   queueBtn.classList.remove('active');
-  
   const STORAGE_KEY = 'watched';
-
   const WatchedIds = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  if (!WatchedIds) {
-    filmContainer.innerHTML = '';
-    emptyTitle.classList.add('visible');
-    emptyImage.classList.add('visible');
-  }
-
+   if (WatchedIds === null || WatchedIds.length === 0) {
+     emptyTitle.classList.add('visible');
+     emptyImage.classList.add('visible');
+   } else {
+     emptyTitle.classList.remove('visible');
+     emptyImage.classList.remove('visible');
+   }
   const moviesWatchedList = [];
-  
   if (WatchedIds !== null) {
     for (const id of WatchedIds) {
       moviesWatchedList.push(await fetchMovie(id));
     }
-
     markupMovies(moviesWatchedList);
   }
 }
-
-
 async function onQueueBtnClick() {
   queueBtn.classList.add('active');
   watchedBtn.classList.remove('active');
@@ -51,14 +39,13 @@ async function onQueueBtnClick() {
 
   const QueueIds = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-
-
-  if (!QueueIds) {
-    filmContainer.innerHTML = '';
-    emptyTitle.classList.add('visible');
-    emptyImage.classList.add('visible');
-  }
-  
+   if (QueueIds === null || QueueIds.length === 0) {
+     emptyTitle.classList.add('visible');
+     emptyImage.classList.add('visible');
+   } else {
+     emptyTitle.classList.remove('visible');
+     emptyImage.classList.remove('visible');
+   }
 
   const moviesQueueList = [];
 
@@ -70,24 +57,6 @@ async function onQueueBtnClick() {
     markupMovies(moviesQueueList);
   }
 }
-
-
-async function onWatchedBtnClick() {
-  const STORAGE_KEY = 'watched';
-
-  const WatchedIds = JSON.parse(localStorage.getItem(STORAGE_KEY));
-
-  const moviesWatchedList = [];
-
-  if (WatchedIds !== null) {
-    for (const id of WatchedIds) {
-      moviesWatchedList.push(await fetchMovie(id));
-    }
-
-    markupMovies(moviesWatchedList);
-  }
-}
-
 
 function markupMovies(movies) {
   removePagination();

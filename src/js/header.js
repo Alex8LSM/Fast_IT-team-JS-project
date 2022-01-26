@@ -16,15 +16,16 @@ function onClickLibrary(e) {
     e.preventDefault();
     headerPage.classList.remove('main-page-header');
     headerPage.classList.add('header-library');
-    headerBtn.classList.remove('visually-hidden');
-    headerSearch.classList.add('visually-hidden');
+    headerBtn.classList.remove('hidden');
+    headerSearch.classList.add('hidden');
     homeLink.classList.remove('current');
     libraryLink.classList.add('current');
 
     const filmContainer = document.querySelector('.main-container-films');
     filmContainer.innerHTML = '';
 
-    emptyContainer();
+    // emptyContainer();
+    onWatchedBtnClick();
   }
   libraryLink.addEventListener('click', onClickLibrary);
 
@@ -59,8 +60,8 @@ function onClickLibrary(e) {
   function onClickHome(e) {
     headerPage.classList.remove('header-library');
     headerPage.classList.add('main-page-header');
-    headerSearch.classList.remove('visually-hidden');
-    headerBtn.classList.add('visually-hidden');
+    headerSearch.classList.remove('hidden');
+    headerBtn.classList.add('hidden');
     libraryLink.classList.remove('current');
     homeLink.classList.add('current');
   }

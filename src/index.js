@@ -1,6 +1,6 @@
 import './sass/main.scss';
 //
-import { headerJS } from './js/header-new-lib.js';
+import { headerJS } from './js/header.js';
 
 headerJS();
 //

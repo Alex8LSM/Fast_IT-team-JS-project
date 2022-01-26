@@ -1,21 +1,21 @@
 const modalLogin = document.getElementById('loginModal');
-const modalSingIn = document.getElementById('singInModal');
-const btndesk = document.getElementById('singInBtn');
+const modalSignIn = document.getElementById('signInModal');
+const btndesk = document.getElementById('signInBtn');
 const logInbtn = document.getElementById('logInBtn');
 const btnclose = document.getElementsByClassName('close')[0];
-btndesk.onclick = myModal;
-logInbtn.onclick = myModalSingIn;
+// btndesk.onclick = myModal;
+logInbtn.onclick = myModalSignIn;
 //
-function myModalSingIn() {
+function myModalSignIn() {
   btnclose.onclick = function () {
-    modalSingIn.style.display = 'none';
+    modalSignIn.style.display = 'none';
   };
   window.onclick = function (event) {
-    if (event.target == modalSingIn) {
-      modalSingIn.style.display = 'none';
+    if (event.target == modalSignIn) {
+      modalSignIn.style.display = 'none';
     }
   };
-  modalSingIn.style.display = 'block';
+  modalSignIn.style.display = 'block';
 }
 //
 function myModal() {

@@ -194,8 +194,7 @@ body.show-modal .modal {
     }
   }
 
-  &__add:hover,
-  &__add:focus {
+  &__add:hover{
     color: $container-bgc;
     background-color: $accent-color;
     border: 0px;

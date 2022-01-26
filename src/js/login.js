@@ -84,8 +84,8 @@ function register() {
     });
 }
 function login() {
-  email = document.getElementById('email').value;
-  password = document.getElementById('password').value;
+  email = document.getElementById('loginEmail').value;
+  password = document.getElementById('loginPassword').value;
   if (validate_email(email) == false || validate_password(password) == false) {
     alert('Email or Password is Outta Line!!');
     return;

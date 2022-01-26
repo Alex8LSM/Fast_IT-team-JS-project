@@ -1,30 +1,39 @@
 <header class="header">
-    <div class="container header-container main-page-header" id="headerMainPage">
-        <nav class="header-library__nav">
-            <a class="logo" href="" id="logo-link">
-                <svg class="header-library__icon" width="24" height="24"><use href="./images/sprite.svg#film"></use></svg>
-                <h1 class="header-library__title">Filmoteka</h1>
-            </a>
-            <ul class="header-library__list">
-                <li class="header-library__item">
-                    <a class="header-library__link current" href="" id="userHome">HOME</a></li>
-                <li class="header-library__item">
-                    <a class="header-library__link" href="" id="userlibrary">MY LIBRARY</a></li>
-            </ul>
-        </nav>
-        <div class="header__search" id="headerSearch">
-            <form action="#" class="search">
-                <input type="text" name="query" class="search__input" placeholder="Поиск фильмов" />
-                <button class="search__button" type="submit">
-                <svg class="search__icon">
-                  <use src="./images/main_page_header/search 2.svg"></use>
-                </svg>
-              </button>
-            </form>
-        </div>
-        <div class="header-library__box visually-hidden" id="headerButtons">
-            <button class="header-library__btn header-watched">WATCHED</button>
-            <button class="header-library__btn header-queue">QUEUE</button>
-        </div>
+  <div class="container header-container main-page-header" id="headerMainPage">
+    <nav class="header-library__nav">
+      <a class="logo" href="" id="logo-link">
+        <svg class="header-library__icon" width="24" height="24">
+          <use href="./images/sprite.svg#film"></use>
+        </svg>
+        <h1 class="header-library__title">Filmoteka</h1>
+      </a>
+      <button class="login" type="button" id="loginBtn">
+        <svg class="login__svg" width="50" height="50">
+          <use class="login__icon" href="./images/user-circle.svg"></use>
+        </svg>
+      </button>
+      <ul class="header-library__list">
+        <li class="header-library__item">
+          <a class="header-library__link current" href="" id="userHome">HOME</a>
+        </li>
+        <li class="header-library__item">
+          <a class="header-library__link" href="" id="userlibrary">MY LIBRARY</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header__search" id="headerSearch">
+      <form action="#" class="search">
+        <input type="text" name="query" class="search__input" placeholder="Поиск фильмов" />
+        <button class="search__button" type="submit">
+          <svg class="search__icon">
+            <use src="./images/main_page_header/search 2.svg"></use>
+          </svg>
+        </button>
+      </form>
     </div>
+    <div class="header-library__box visually-hidden" id="headerButtons">
+      <button class="header-library__btn header-watched">WATCHED</button>
+      <button class="header-library__btn header-queue">QUEUE</button>
+    </div>
+  </div>
 </header>

@@ -1,7 +1,7 @@
 import ApiMovie from '/js/apiMovie';
 import filmCardTpl from '../partials/templates/filmCard.hbs';
 const trendyMovie = new ApiMovie();
-import { renderPages } from './paginationPages';
+import { PaginationButton } from './paginationPages';
 
 const card = document.querySelector('.main-container');
 const logoEl = document.querySelector('.logo');
@@ -10,7 +10,7 @@ logoEl.addEventListener('click', onLogoClick);
 homeEl.addEventListener('click', onHomeClick);
 
 const filmContainer = document.querySelector('.main-container-films');
-
+let totalPagesMain = 10;
 renderMainPage();
 
 function onHomeClick(e) {
@@ -18,16 +18,18 @@ function onHomeClick(e) {
 }
 function onLogoClick(e) {
   renderMainPage();
-
 }
 
 export function renderMainPage() {
+  
     trendyMovie
         .putGenresAndCutReleaseDateToYear()
         .then(renderFilmsCard)
         .catch(error => {
             console.log(error);
         });
+  totalPagesMain = trendyMovie.totalPages;
+  newPaginationMain(trendyMovie.totalPages)
 }
 
 export function renderFilmsCard(trendyMovies) {
@@ -35,7 +37,41 @@ export function renderFilmsCard(trendyMovies) {
   filmContainer.innerHTML = '';
   const markup = filmCardTpl(trendyMovies);
   filmContainer.insertAdjacentHTML('beforeend', markup);
-  renderPages(trendyMovie.totalPages);
+  
 }
 
+function newPaginationMain(totalPagesMain) {
+  if (document.querySelector('.pagination-buttons-set')) {
+    document.querySelector(".pagination-buttons-set").innerHTML = ""
+    document.querySelector(".pagination-buttons-set").remove()
+  }
+  
+  if (totalPagesMain < 2) { return }
+  
+  if (totalPagesMain < 5) {
+    const paginationMain = new PaginationButton(totalPagesMain, 3, "-set", trendyMovie.page);
+    paginationMain.render();
+    paginationMain.onChange(e => {
+    let pageCurent = e.target.value;
+      trendyMovie.pageSet(pageCurent);
+      apiMoviesWithoutPaginator()
+    });
+  }
+  else {const paginationMain = new PaginationButton(totalPagesMain, 5, "-set", trendyMovie.page);
+  paginationMain.render();
+  paginationMain.onChange(e => {
+    let pageCurent = e.target.value;
+    trendyMovie.pageSet(pageCurent);
+    apiMoviesWithoutPaginator()
+    });
+  }
+}
 
+function apiMoviesWithoutPaginator(){
+trendyMovie
+  .putGenresAndCutReleaseDateToYear()
+  .then(renderFilmsCard)
+  .catch(error => {
+      console.log(error);
+  });
+}

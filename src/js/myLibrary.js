@@ -44,6 +44,8 @@ async function onWatchedBtnClick() {
 
 function markupMovies(movies) {
   filmContainer.innerHTML = '';
+  const pagination = document.querySelector('.pagination-buttons-set');
+  pagination.classList.add('visually-hidden');
   const markup = filmCardTpl(movies);
   filmContainer.insertAdjacentHTML('beforeend', markup);
 }
@@ -55,7 +57,6 @@ async function fetchMovie(id) {
 
   try {
     const response = await axios(`${BASE_URL}movie/${id}?api_key=${API_KEY}&language=en-US`);
-    console.log(response);
     return response.data;
   } catch (error) {
     console.log(error);

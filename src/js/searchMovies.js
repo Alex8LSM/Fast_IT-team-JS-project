@@ -64,24 +64,39 @@ function newPagination(totalPages) {
     document.querySelector(".pagination-buttons-set").remove()
   }
   
-  if (totalPages < 2){return}
-  if (totalPages < 5) {
-  const paginationSearch = new PaginationButton(totalPages, 3, "-set", pageC);
-  paginationSearch.render();
-  paginationSearch.onChange(e => {
-  let pageCurent = e.target.value;
-    apiMoviRender(pageCurent);
-    scrolledToTop(scrollY);
-  });
-}
-  else {const paginationSearch = new PaginationButton(totalPages, 5, "-set", pageC);
-  paginationSearch.render();
-  paginationSearch.onChange(e => {
-  let pageCurent = e.target.value;
-    apiMoviRender(pageCurent);
-    scrolledToTop(scrollY);
-  });}
+  if (totalPages < 2) { return }
+
+  if (totalPages === 2) {
+    const paginationSearch = new PaginationButton(totalPages, 2, "-set", pageC);
+    paginationSearch.render();
+    paginationSearch.onChange(e => {
+    let pageCurent = e.target.value;
+      apiMoviRender(pageCurent);
+      scrolledToTop(scrollY);
+    });
+  }
+  else
+    
+  if (totalPages>2 && totalPages < 5) {
+    const paginationSearch = new PaginationButton(totalPages, 3, "-set", pageC);
+    paginationSearch.render();
+    paginationSearch.onChange(e => {
+    let pageCurent = e.target.value;
+      apiMoviRender(pageCurent);
+      scrolledToTop(scrollY);
+    });
+  }
   
+  else
+
+  {const paginationSearch = new PaginationButton(totalPages, 5, "-set", pageC);
+    paginationSearch.render();
+    paginationSearch.onChange(e => {
+    let pageCurent = e.target.value;
+      apiMoviRender(pageCurent);
+      scrolledToTop(scrollY);
+    });
+  }
   
 }
 

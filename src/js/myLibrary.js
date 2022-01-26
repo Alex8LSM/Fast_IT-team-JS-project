@@ -62,8 +62,7 @@ async function onQueueBtnClick() {
 function markupMovies(movies) {
   removePagination();
   filmContainer.innerHTML = '';
-  const pagination = document.querySelector('.pagination-buttons-set');
-  pagination.classList.add('visually-hidden');
+
   const markup = filmCardTpl(movies);
   filmContainer.insertAdjacentHTML('beforeend', markup);
 }

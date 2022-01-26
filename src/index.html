@@ -11,11 +11,12 @@
 
 <body data-lockScroll>
     <include src="./partials/header-new.html"></include>
+    <include src="./partials/login.html"></include>
     <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
     <div class="hide-dizzy dizzy"></div>
     <main>
         <div class="main-container">
-            <div class="main-container-films"></div>
+            <ul class="main-container-films"></ul>
             <h3 class="container-empty__title">Let's go to search a movie!)</h3>
             <img class="container-empty__image" src="./images/movie.jpg" alt="" />
         </div>
@@ -26,9 +27,13 @@
     <footer>
         <include src="./partials/footer.html"></include>
     </footer>
-
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <script src="./index.js "></script>
-</body>
 
+    <script src="./js/login.js"></script>
+  </body>
 </html>
+

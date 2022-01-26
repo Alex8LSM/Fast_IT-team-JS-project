@@ -3,8 +3,12 @@ import moviesTpl from '../partials/templates/filmCard.hbs';
 import ApiMovie from '/js/apiMovie';
 const searchMovies = new ApiMovie();
 import Notiflix from 'notiflix';
+import { PaginationButton } from './paginationPages';
 
-  
+let searchQuery = ""
+let totalPages = 10;
+let pageC = 1;  
+
 const refs = {
     form: document.querySelector('.search'),
     div: document.querySelector('.main-container'),
@@ -17,6 +21,7 @@ async function onSearchMovies(e) {
     e.preventDefault();
     const query = e.currentTarget.elements.query.value.trim();
     let page = 1;
+    searchQuery = query;
 
 try {
     if(query.length <= 1) {
@@ -24,16 +29,18 @@ try {
      return;
     }
 
-   const movies = await apiSearch.fetchMoviesSearch(query, page).then(data => {
+  const movies = await apiSearch.fetchMoviesSearch(searchQuery, page).then(({ total_pages, results }) => {
+    totalPages = total_pages;
    return searchMovies.fetchGenres().then(listOfGenres => {
-     return data.map(movie => ({
+   return results.map(movie => ({
        ...movie,
        release_date: movie.release_date.slice(0, 4),
        genres: movie.genre_ids.map(id => listOfGenres.filter(genre => genre.id === id)).flat(),
      }));
    });
   });
-   renderMovies(movies);
+  renderMovies(movies);
+  newPagination(totalPages);
 } catch (error){
 }
 }
@@ -43,7 +50,43 @@ function renderMovies(movies) {
   const markup = moviesTpl(movies);
   refs.container.insertAdjacentHTML('beforeend', markup);
 }
- 
 
+function newPagination(totalPages) {
+  if (document.querySelector('.pagination-buttons-set')) {
+    document.querySelector(".pagination-buttons-set").innerHTML = ""
+    document.querySelector(".pagination-buttons-set").remove()
+  }
+  
+  if (totalPages < 2){return}
+  if (totalPages < 5) {
+  const paginationSearch = new PaginationButton(totalPages, 3, "-set", pageC);
+  paginationSearch.render();
+  paginationSearch.onChange(e => {
+  let pageCurent = e.target.value;
+  apiMoviRender(pageCurent);
+  });
+}
+  else {const paginationSearch = new PaginationButton(totalPages, 5, "-set", pageC);
+  paginationSearch.render();
+  paginationSearch.onChange(e => {
+  let pageCurent = e.target.value;
+  apiMoviRender(pageCurent);
+  });}
+  
+  
+}
 
-
+async function apiMoviRender(page){
+const movi = await apiSearch.fetchMoviesSearch(searchQuery, page).then(({ total_pages, results }) => {
+    totalPages = total_pages;
+   return searchMovies.fetchGenres().then(listOfGenres => {
+   return results.map(movie => ({
+       ...movie,
+       release_date: movie.release_date.slice(0, 4),
+       genres: movie.genre_ids.map(id => listOfGenres.filter(genre => genre.id === id)).flat(),
+     }));
+   });
+  });
+  
+  renderMovies(movi);
+  }

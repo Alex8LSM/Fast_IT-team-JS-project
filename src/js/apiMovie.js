@@ -5,7 +5,7 @@ const axios = require('axios');
 export default class ApiMovie {
   constructor() {
     this.page = 1;
-    this.totalPages = 100;
+    this.totalPages = 1000;
   }
 
   async fetchTrendyMovie() {
@@ -13,7 +13,6 @@ export default class ApiMovie {
     const fetch = await axios.get(trendyMovieUrl);
     const trendyMovies = fetch.data.results;
     this.totalPages=fetch.data.total_pages
-    
     return trendyMovies;
   }
 

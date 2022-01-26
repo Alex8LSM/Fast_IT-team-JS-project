@@ -1,16 +1,64 @@
 const axios = require('axios');
+import { removePagination } from './paginationPages';
 import filmCardTpl from '../partials/templates/filmCard.hbs';
 const watchedBtn = document.querySelector('.header-watched');
 const queueBtn = document.querySelector('.header-queue');
 const filmContainer = document.querySelector('.main-container-films');
 
+
 queueBtn.addEventListener('click', onQueueBtnClick);
 watchedBtn.addEventListener('click', onWatchedBtnClick);
 
+  const watchedBtn = document.querySelector('.header-watched');
+  const queueBtn = document.querySelector('.header-queue');
+  const filmContainer = document.querySelector('.main-container-films');
+  const emptyTitle = document.querySelector('.container-empty__title');
+  const emptyImage = document.querySelector('.container-empty__image');
+  
+  queueBtn.addEventListener('click', onQueueBtnClick);
+  watchedBtn.addEventListener('click', onWatchedBtnClick);
+  
+async function onWatchedBtnClick() {
+  watchedBtn.classList.add('active');
+  queueBtn.classList.remove('active');
+  
+  const STORAGE_KEY = 'watched';
+
+  const WatchedIds = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  if (!WatchedIds) {
+    filmContainer.innerHTML = '';
+    emptyTitle.classList.add('visible');
+    emptyImage.classList.add('visible');
+  }
+
+  const moviesWatchedList = [];
+  
+  if (WatchedIds !== null) {
+    for (const id of WatchedIds) {
+      moviesWatchedList.push(await fetchMovie(id));
+    }
+
+    markupMovies(moviesWatchedList);
+  }
+}
+
+
 async function onQueueBtnClick() {
+  queueBtn.classList.add('active');
+  watchedBtn.classList.remove('active');
+
   const STORAGE_KEY = 'queue';
 
   const QueueIds = JSON.parse(localStorage.getItem(STORAGE_KEY));
+
+
+
+  if (!QueueIds) {
+    filmContainer.innerHTML = '';
+    emptyTitle.classList.add('visible');
+    emptyImage.classList.add('visible');
+  }
+  
 
   const moviesQueueList = [];
 
@@ -22,6 +70,7 @@ async function onQueueBtnClick() {
     markupMovies(moviesQueueList);
   }
 }
+
 
 async function onWatchedBtnClick() {
   const STORAGE_KEY = 'watched';
@@ -39,10 +88,11 @@ async function onWatchedBtnClick() {
   }
 }
 
+
 function markupMovies(movies) {
+  removePagination();
   filmContainer.innerHTML = '';
-  const pagination = document.querySelector('.pagination-buttons-set');
-  pagination.classList.add('visually-hidden');
+
   const markup = filmCardTpl(movies);
   filmContainer.insertAdjacentHTML('beforeend', markup);
 }

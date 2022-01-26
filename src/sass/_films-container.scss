@@ -1,64 +1,64 @@
 .main-container-films {
-    width: 100%;
-    @media screen and (min-width: $tablet) {
-        display: grid;
-        grid-template-columns: 294px 294px;
-        grid-gap: 30px;
-    }
-    @media screen and (min-width: $desktop) {
-        display: grid;
-        grid-template-columns: 274px 274px 274px;
-        grid-gap: 30px;
-    }
+  width: 100%;
+  @media screen and (min-width: $tablet) {
+    display: grid;
+    grid-template-columns: 294px 294px;
+    grid-gap: 30px;
+  }
+  @media screen and (min-width: $desktop) {
+    display: grid;
+    grid-template-columns: 274px 274px 274px;
+    grid-gap: 30px;
+  }
 }
 
 .container-empty__title {
-    margin-top: calc((100vh - 230px - 110px) / 3);
-    font-size: 20px;
-    text-align: center;
-    letter-spacing: 2px;
-    color: $films-title-color;
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-    user-select: none;
-    padding-bottom: 20px;
-    @media screen and (min-width: $tablet) {
-        margin-top: calc((100vh - 230px - 400px) / 3);
-        font-size: 30px;
-    }
-    @media screen and (min-width: $desktop) {
-        margin-top: calc((100vh - 230px - 400px) / 3);
-        font-size: 30px;
-    }
+  margin-top: calc((100vh - 230px - 110px) / 3);
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: $films-title-color;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  user-select: none;
+  padding-bottom: 20px;
+  @media screen and (min-width: $tablet) {
+    margin-top: calc((100vh - 230px - 400px) / 3);
+    font-size: 30px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-top: calc((100vh - 230px - 400px) / 3);
+    font-size: 30px;
+  }
 }
 
 .container-empty__title.visible {
-    position: static;
-    width: auto;
-    height: auto;
-    clip: auto;
-    overflow: auto;
-    user-select: inherit;
+  position: static;
+  width: auto;
+  height: auto;
+  clip: auto;
+  overflow: auto;
+  user-select: inherit;
 }
 
 .container-empty__image {
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .container-empty__image.visible {
-    position: static;
-    width: auto;
-    height: auto;
-    clip: auto;
-    overflow: auto;
-    user-select: inherit;
+  position: static;
+  width: auto;
+  height: auto;
+  clip: auto;
+  overflow: auto;
+  user-select: inherit;
 }

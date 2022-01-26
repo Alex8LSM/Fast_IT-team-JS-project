@@ -1,4 +1,6 @@
 import { onLogoClick } from './fetchTrendyMovie';
+import { onWatchedBtnClick, onQueueBtnClick } from './myLibrary';
+import { removePagination } from './paginationPages';
 
 function headerJS() {
   const headerPage = document.getElementById('headerMainPage');
@@ -10,7 +12,7 @@ function headerJS() {
 
   logoEl.addEventListener('click', onLogoClick);
 
-  function onClickLibrary(e) {
+function onClickLibrary(e) {
     e.preventDefault();
     headerPage.classList.remove('main-page-header');
     headerPage.classList.add('header-library');
@@ -26,28 +28,33 @@ function headerJS() {
   }
   libraryLink.addEventListener('click', onClickLibrary);
 
-  function emptyContainer() {
+   function emptyContainer() {
     const WatchedIds = JSON.parse(localStorage.getItem('watched'));
     const QueueIds = JSON.parse(localStorage.getItem('queue'));
     const emptyTitle = document.querySelector('.container-empty__title');
     const emptyImage = document.querySelector('.container-empty__image');
 
-    if (WatchedIds === null || WatchedIds.length === 0) {
+     if (WatchedIds === null || WatchedIds.length === 0) {
+      removePagination();
       emptyTitle.classList.add('visible');
       emptyImage.classList.add('visible');
     } else {
       emptyTitle.classList.remove('visible');
       emptyImage.classList.remove('visible');
+      onWatchedBtnClick();
     }
 
-    if (QueueIds === null || QueueIds.length === 0) {
+     if (QueueIds === null || QueueIds.length === 0) {
+      removePagination();
       emptyTitle.classList.add('visible');
       emptyImage.classList.add('visible');
     } else {
       emptyTitle.classList.remove('visible');
       emptyImage.classList.remove('visible');
+      onQueueBtnClick();
     }
   }
+
 
   function onClickHome(e) {
     headerPage.classList.remove('header-library');

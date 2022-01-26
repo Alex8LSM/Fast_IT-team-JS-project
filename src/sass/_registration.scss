@@ -1,0 +1,130 @@
+.login {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  background-image: url("../images/user-circle.svg");
+  background-color: #fff;
+  border-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.login:hover {
+  background-color: #ff6b08;
+  border-color: transparent;
+  transition-duration: 250ms;
+}
+.modal-login {
+  position: relative;
+  display: none;
+  max-height: 100vh;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.692);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #ffffff83;
+  max-height: 100vh;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  max-width: 320px;
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  top: 30%;
+  left: 50%;
+  animation: move 0.5s ease-in-out;
+}
+@keyframes move {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 30%;
+  }
+}
+.close {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -13px;
+  right: 0;
+  padding: 15px;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  cursor: pointer;
+}
+.modal__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.auth-input {
+  color: #ffffff;
+  display: flex;
+  width: 300px;
+  padding: 5px 5px 5px 5px;
+  background-color: rgba(0, 0, 0, 0.534);
+  border-color: transparent;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+.auth-input:focus {
+  outline: none;
+}
+.auth-header {
+  color: #000000d8;
+  margin-bottom: 10px;
+  color: $container-bgc;
+  line-height: 1.33;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 30px;
+  text-align: center;
+}
+.btn-wrap {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 15px;
+}
+.auth-btn {
+  background-color: rgba(0, 0, 0, 0.363);
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100px;
+  height: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  color: $container-bgc;
+  line-height: 1.33;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.14;
+  text-align: center;
+}
+.auth-btn:hover {
+  background-color: rgba(228, 83, 0, 0.749);
+  transition-duration: 500ms;
+}
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.836);
+  font-family: Roboto;
+  font-weight: 400px;
+  font-size: 14px;
+  line-height: 16px;
+}

@@ -1,20 +1,29 @@
-
- {{#each this}}
-    <li class="unit-film-card">
-        <a class="unit-film-card__link" href="">
-            <div class="card-tumb">
-                 {{#if poster_path}}
-                <img class='card-tumb__image' src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" data-id="{{id}}">
-                 {{/if}}
-                 {{#unless poster_path}}
-  <img src="https://stringfixer.com/files/325551406.jpg"
-   alt="movie photo"  data-id="{{id}}">
-  {{/unless}}
-            </div>         
-            <div class="card-wrapper-film">
-                <h2 class="unit-film-card__item" data-id="{{id}}">{{title}}</h2>
-                <p class="unit-film-card__item-text">{{#each genres}} {{name}}{{/each}} | {{release_date}}</p>
-            </div>
-        </a>  
-    </li>
-  {{/each}}
+{{#each this}}
+  <li class='unit-film-card'>
+    <a class='unit-film-card__link' href=''>
+      <div class='card-tumb'>
+        {{#if poster_path}}
+          <img
+            class='card-tumb__image'
+            src='https://image.tmdb.org/t/p/w500{{poster_path}}'
+            alt='{{title}}'
+            data-id='{{id}}'
+          />
+        {{/if}}
+        {{#unless poster_path}}
+          <img
+            src='https://stringfixer.com/files/325551406.jpg'
+            alt='movie photo'
+            data-id='{{id}}'
+          />
+        {{/unless}}
+      </div>
+      <div class='card-wrapper-film'>
+        <h2 class='unit-film-card__item' data-id='{{id}}'>{{title}}</h2>
+        <p class='unit-film-card__item-text'>{{#each genres}} {{name}}{{/each}}
+          |
+          {{release_date}}</p>
+      </div>
+    </a>
+  </li>
+{{/each}}

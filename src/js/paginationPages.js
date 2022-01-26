@@ -52,8 +52,8 @@ export function PaginationButton(totalPages, maxPagesVisible = 10, nameDiv, curr
     btn.textContent = pages[index];
     
     if(pages[index] === currentPage) {
-      currentPageBtn.classList.remove('active');
-      btn.classList.add('active');
+      currentPageBtn.classList.remove('activeBtn');
+      btn.classList.add('activeBtn');
       currentPageBtn = btn;
       currentPageBtn.focus();
     }
@@ -72,7 +72,7 @@ buttons.set(
   pages.map((pageNumber, index) => {
   const isCurrentPage = currentPage === pageNumber;
   const button = createAndSetupButton(
-      pageNumber, isCurrentPage ? 'active' : '', false, onPageButtonClick
+      pageNumber, isCurrentPage ? 'activeBtn' : '', false, onPageButtonClick
     );
     
     if(isCurrentPage) {

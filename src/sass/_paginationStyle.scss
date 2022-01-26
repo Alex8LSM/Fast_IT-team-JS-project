@@ -37,7 +37,7 @@
   }
 }
 
-.active {
+.activeBtn {
   position: relative;
   background-image: linear-gradient(90deg, #00c0ff 0%, #dbe094 49%, #fc4f4f 80%, #00c0ff 100%);
   font-size: 15px;
@@ -48,7 +48,7 @@
   transform: scale(1.05);
 }
 
-.active:after {
+.activeBtn:after {
   content: '';
   width: 27px;
   height: 27px;

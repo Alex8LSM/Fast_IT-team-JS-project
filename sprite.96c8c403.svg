@@ -1,0 +1,24 @@
+<svg aria-hidden="true" style="position:absolute;width:0;height:0" xmlns="http://www.w3.org/2000/svg" overflow="hidden">
+  <defs>
+    <symbol id="search" viewBox="0 0 32 32">
+      <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.667" d="M14.667 25.333c5.891 0 10.667-4.776 10.667-10.667S20.558 3.999 14.667 3.999 4 8.775 4 14.666s4.776 10.667 10.667 10.667zM28 28.001l-5.8-5.8"/>
+    </symbol>
+    <symbol id="arrow_right" viewBox="0 0 32 32">
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.667" d="M6.667 16h18.667M16 25.333 25.333 16 16 6.667"/>
+    </symbol>
+    <symbol id="heard" viewBox="0 0 32 32">
+      <path  d="m16 30.144-2.24-2.218C5.44 20.639 0 15.728 0 9.708 0 4.797 3.84.995 8.8.995c2.72 0 5.44 1.267 7.2 3.327C17.76 2.263 20.48.995 23.2.995c4.96 0 8.8 3.802 8.8 8.713 0 6.02-5.44 10.931-13.76 18.218L16 30.144z"/>
+    </symbol>
+    <symbol id="film" viewBox="0 0 32 32"><path  stroke="#818181" style="stroke:var(--color3, #818181)" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.667" d="M26.427 2.667H5.574a2.907 2.907 0 0 0-2.907 2.907v20.853a2.907 2.907 0 0 0 2.907 2.907h20.853a2.907 2.907 0 0 0 2.907-2.907V5.574a2.907 2.907 0 0 0-2.907-2.907zM9.333 2.667v26.667M22.667 2.667v26.667M2.667 16h26.667M2.667 9.333h6.667M2.667 22.667h6.667M22.667 22.667h6.667M22.667 9.333h6.667"/>
+</symbol>
+    <symbol id="arrow_left" viewBox="0 0 32 32">
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.667" d="M25.333 16H6.666M16 25.333 6.667 16 16 6.667"/>
+    </symbol>
+    <symbol id="flash" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
+      <polygon fill="#FFC107" points="33,22 23.6,22 30,5 19,5 13,26 21.6,26 17,45"/>
+    </symbol>
+    <symbol id="close" viewBox="0 0 11 11">
+     <path d="M11 1.108L9.892 0 5.5 4.392 1.108 0 0 1.108 4.392 5.5 0 9.892 1.108 11 5.5 6.608 9.892 11 11 9.892 6.608 5.5 11 1.108z"></path>
+    </symbol>
+  </defs>
+</svg>

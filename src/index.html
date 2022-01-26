@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./images/favicon.svg" type="image/svg" />
     <title>Filmoteka</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
-      integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
-      crossorigin="anonymous"
-    />
-  </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css" integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g==" crossorigin="anonymous" />
+</head>
 
-  <body data-lockScroll>
+<body data-lockScroll>
     <include src="./partials/header-new.html"></include>
     <include src="./partials/login.html"></include>
     <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
     <div class="hide-dizzy dizzy"></div>
     <main>
-      <div class="main-container">
-        <div class="main-container-films"></div>
-      </div>
+        <div class="main-container">
+            <div class="main-container-films"></div>
+            <h3 class="container-empty__title">Let's go to search a movie!)</h3>
+            <img class="container-empty__image" src="./images/movie.jpg" alt="" />
+        </div>
 
-      <include src="./partials/modalMovie.html"></include>
-      <include src="./partials/our-team-modal.html"></include>
+        <include src="./partials/modalMovie.html"></include>
+        <include src="./partials/our-team-modal.html"></include>
     </main>
     <footer>
-      <include src="./partials/footer.html"></include>
+        <include src="./partials/footer.html"></include>
     </footer>
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <script src="./index.js "></script>
+
     <script src="./js/login.js"></script>
   </body>
 </html>
+

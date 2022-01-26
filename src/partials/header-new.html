@@ -7,11 +7,15 @@
         </svg>
         <h1 class="header-library__title">Filmoteka</h1>
       </a>
-      <button class="login" type="button" id="loginBtn">
-        <svg class="login__svg" width="50" height="50">
-          <use class="login__icon" href="./images/user-circle.svg"></use>
-        </svg>
-      </button>
+      <div class="btn-auth">
+        <button class="login" type="button">
+          <svg class="login__svg" width="50" height="50">
+            <use class="login__icon" href="./images/user-circle.svg"></use>
+          </svg>
+          <div class="rightbt" id="logInBtn"><p class="innertext">SingIn</p></div>
+          <div class="leftbt" id="singInBtn"><p class="innertext">LogIn</p></div>
+        </button>
+      </div>
       <ul class="header-library__list">
         <li class="header-library__item">
           <a class="header-library__link current" href="" id="userHome">HOME</a>

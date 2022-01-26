@@ -23,7 +23,7 @@ function headerJS() {
     filmContainer.innerHTML = '';
 
     emptyContainer();
-}
+  }
   libraryLink.addEventListener('click', onClickLibrary);
 
   function emptyContainer() {

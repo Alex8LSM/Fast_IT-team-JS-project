@@ -1,19 +1,34 @@
-const modal = document.getElementById('loginModal');
-const btndesk = document.getElementById('loginBtn');
+const modalLogin = document.getElementById('loginModal');
+const modalSingIn = document.getElementById('singInModal');
+const btndesk = document.getElementById('singInBtn');
+const logInbtn = document.getElementById('logInBtn');
 const btnclose = document.getElementsByClassName('close')[0];
-btnclose.onclick = function () {
-  modal.style.display = 'none';
-};
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
-};
-function myModalBuy() {
-  modal.style.display = 'block';
+btndesk.onclick = myModal;
+logInbtn.onclick = myModalSingIn;
+//
+function myModalSingIn() {
+  btnclose.onclick = function () {
+    modalSingIn.style.display = 'none';
+  };
+  window.onclick = function (event) {
+    if (event.target == modalSingIn) {
+      modalSingIn.style.display = 'none';
+    }
+  };
+  modalSingIn.style.display = 'block';
 }
-btndesk.onclick = myModalBuy;
-
+//
+function myModal() {
+  btnclose.onclick = function () {
+    modalLogin.style.display = 'none';
+  };
+  window.onclick = function (event) {
+    if (event.target == modalLogin) {
+      modalLogin.style.display = 'none';
+    }
+  };
+  modalLogin.style.display = 'block';
+}
 //firebase
 const firebaseConfig = {
   apiKey: 'AIzaSyAV2ss40V5eT7frdT-RAJIEsm8Mz9X_mmk',

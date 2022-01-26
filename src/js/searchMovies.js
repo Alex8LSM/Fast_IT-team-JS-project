@@ -4,6 +4,7 @@ import ApiMovie from '/js/apiMovie';
 const searchMovies = new ApiMovie();
 import Notiflix from 'notiflix';
 import { PaginationButton } from './paginationPages';
+import { scrolledToTop } from './upButton';
 
 let searchQuery = ""
 let totalPages = 10;
@@ -69,14 +70,16 @@ function newPagination(totalPages) {
   paginationSearch.render();
   paginationSearch.onChange(e => {
   let pageCurent = e.target.value;
-  apiMoviRender(pageCurent);
+    apiMoviRender(pageCurent);
+    scrolledToTop(scrollY);
   });
 }
   else {const paginationSearch = new PaginationButton(totalPages, 5, "-set", pageC);
   paginationSearch.render();
   paginationSearch.onChange(e => {
   let pageCurent = e.target.value;
-  apiMoviRender(pageCurent);
+    apiMoviRender(pageCurent);
+    scrolledToTop(scrollY);
   });}
   
   

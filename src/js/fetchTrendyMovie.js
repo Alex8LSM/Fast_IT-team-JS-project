@@ -2,6 +2,7 @@ import ApiMovie from '/js/apiMovie';
 import filmCardTpl from '../partials/templates/filmCard.hbs';
 const trendyMovie = new ApiMovie();
 import { PaginationButton } from './paginationPages';
+import { scrolledToTop } from './upButton';
 
 const card = document.querySelector('.main-container');
 const logoEl = document.querySelector('.logo');
@@ -54,7 +55,8 @@ function newPaginationMain(totalPagesMain) {
     paginationMain.onChange(e => {
     let pageCurent = e.target.value;
       trendyMovie.pageSet(pageCurent);
-      apiMoviesWithoutPaginator()
+      apiMoviesWithoutPaginator();
+      scrolledToTop(scrollY)
     });
   }
   else {const paginationMain = new PaginationButton(totalPagesMain, 5, "-set", trendyMovie.page);
@@ -63,6 +65,7 @@ function newPaginationMain(totalPagesMain) {
     let pageCurent = e.target.value;
     trendyMovie.pageSet(pageCurent);
     apiMoviesWithoutPaginator()
+    scrolledToTop(scrollY)
     });
   }
 }

@@ -1,4 +1,5 @@
 function createUpBtn() {
+
     const buttonUp = document.createElement('button');
     buttonUp.className = `upBtn`;
     document.querySelector('body').appendChild(buttonUp);
@@ -66,3 +67,4 @@ element.scrollIntoView({ behavior: 'smooth', block: 'end'});
 }
 
 export {createUpBtn}
+

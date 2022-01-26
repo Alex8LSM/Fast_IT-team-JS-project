@@ -72,7 +72,13 @@ async function fetchMovie(id) {
 
   try {
     const response = await axios(`${BASE_URL}movie/${id}?api_key=${API_KEY}&language=en-US`);
-    return response.data;
+    const movieData = response.data;
+    const newMovieData = {
+      ...movieData,
+      release_date: movieData.release_date.slice(0, 4),
+      genres: movieData.genres.slice(0, 3),
+    };
+    return newMovieData;
   } catch (error) {
     console.log(error);
   }

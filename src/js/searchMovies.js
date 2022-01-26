@@ -33,13 +33,19 @@ try {
      }));
    });
   });
+
+  if(movies.length === 0) {
+    Notiflix.Notify.failure(`Search result not successful.Enter the correct movie name.`);
+    refs.div.innerHTML= `<img src="https://stringfixer.com/files/325551406.jpg"
+    alt="movie photo">`;
+  }
    renderMovies(movies);
 } catch (error){
-}
+    }
 }
 
 function renderMovies(movies) { 
-  refs.container.innerHTML=""
+  refs.container.innerHTML="";
   const markup = moviesTpl(movies);
   refs.container.insertAdjacentHTML('beforeend', markup);
 }

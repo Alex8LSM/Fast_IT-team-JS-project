@@ -4,6 +4,7 @@ const modalSignIn = document.getElementById('signInModal');
 const btndesk = document.getElementById('signInBtn');
 const logInbtn = document.getElementById('logInBtn');
 const btnclose = document.getElementsByClassName('close')[0];
+const btnclose2 = document.getElementById('closeSign');
 btndesk.onclick = myModal;
 logInbtn.onclick = myModalSignIn;
 //
@@ -12,7 +13,7 @@ Notiflix.Notify.init({
 });
 //
 function myModalSignIn() {
-  btnclose.onclick = function () {
+  btnclose2.onclick = function () {
     modalSignIn.style.display = 'none';
   };
   window.onclick = function (event) {

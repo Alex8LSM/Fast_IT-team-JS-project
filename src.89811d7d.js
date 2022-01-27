@@ -105,4 +105,4 @@ const t=document.querySelector(".js-backdrop");function e(t){t.classList.contain
 },{"notiflix":"hWOm"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=require("./js/header.js");require("./js/our-team-modal"),require("./js/fetchTrendyMovie"),require("./js/modalMovie"),require("./js/searchMovies");var r=require("./js/upButton"),s=i(require("./js/spiner"));function i(e){return e&&e.__esModule?e:{default:e}}require("./js/myLibrary.js"),require("./js/localStorage"),require("./js/login"),(0,e.headerJS)(),(0,r.createUpBtn)(),(0,s.default)();
 },{"./sass/main.scss":"clu1","./js/header.js":"cGsR","./js/our-team-modal":"TmFP","./js/fetchTrendyMovie":"J2Ie","./js/modalMovie":"MbNB","./js/searchMovies":"KyDk","./js/upButton":"FT6E","./js/spiner":"eYPI","./js/myLibrary.js":"EZhS","./js/localStorage":"nnQC","./js/login":"yZtF"}]},{},["Focm"], null)
-//# sourceMappingURL=/JS-project-test/src.d7224f4d.js.map
+//# sourceMappingURL=/Fast_IT-team-JS-project/src.89811d7d.js.map

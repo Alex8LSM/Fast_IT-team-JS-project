@@ -1,3 +1,5 @@
+                      Our team members tasks:
+                      
 Oleksandr Khvaleba - Team Lead, favicon, main-container, local-storage write, team-modal
 
 Dmytro Myruk - Scrum Master, stand-up speaker, variables, film-card template

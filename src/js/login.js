@@ -106,7 +106,7 @@ function login() {
         last_login: Date.now(),
       };
       database_ref.child('users/' + user.uid).update(user_data);
-      Notiflix.Notify.success('Logged In!!');
+      // Notiflix.Notify.success('Logged In!!');
     })
     .catch(function (error) {
       const error_code = error.code;
@@ -114,6 +114,28 @@ function login() {
 
       alert(error_message);
     });
+}
+const userNameEl = document.getElementById('userNameInsert');
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    // console.log('user', user);
+    const user_data = database.ref('users/' + user.uid);
+    user_data.on('value', function (snapshot) {
+      const user_data = snapshot.val();
+      userNameEl.innerHTML = user_data.full_name;
+      Notiflix.Notify.success(`Welcome  ${user_data.full_name}`);
+    });
+  }
+  // else {
+  //   console.log('not logged in');
+  // }
+});
+//
+userNameEl.addEventListener('click', signOut);
+function signOut() {
+  auth.signOut();
+  userNameEl.innerHTML = '';
+  Notiflix.Notify.success('Logged Out!!');
 }
 function validate_email(email) {
   const expression = /^[^@]+@\w+(\.\w+)+\w$/;

@@ -6,7 +6,7 @@ Dmytro Myruk - Scrum Master, stand-up speaker, variables, film-card template
 
 Mariia Mlyuzan - film-card template, film search, film-modal (oped/close/info)
 
-Igor Makoida - sprite, pagination html, pagination js
+Igor Makoida - sprite, pagination html, navigation buttons
 
 Tetyana Korolyuk - My-Library header, logo js, My-Library js
 

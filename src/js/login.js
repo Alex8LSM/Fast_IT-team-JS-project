@@ -7,6 +7,10 @@ const btnclose = document.getElementsByClassName('close')[0];
 btndesk.onclick = myModal;
 logInbtn.onclick = myModalSignIn;
 //
+Notiflix.Notify.init({
+  position: 'center-top',
+});
+//
 function myModalSignIn() {
   btnclose.onclick = function () {
     modalSignIn.style.display = 'none';
@@ -78,7 +82,7 @@ function register() {
         logIn: false,
       };
       database_ref.child('users/' + user.uid).set(user_data);
-      Notiflix.Notify.success('User Registered!!');
+      Notiflix.Notify.success('Registered!!');
       // alert('User Created!!');
     })
     .catch(function (error) {
@@ -105,7 +109,7 @@ function login() {
         last_login: Date.now(),
       };
       database_ref.child('users/' + user.uid).update(user_data);
-      Notiflix.Notify.success('User Logged In!!');
+      Notiflix.Notify.success('Logged In!!');
       // alert('User Logged In!!');
     })
     .catch(function (error) {

@@ -1,6 +1,6 @@
 import ApiMovie from '/js/apiMovie';
 const trendyMovie = new ApiMovie();
-import { renderFilmsCard } from './fetchTrendyMovie'
+// import { renderFilmsCard } from './fetchTrendyMovie'
 
 const pageNumbers = (total, max, current) => {
   const half = Math.floor(max / 2);

@@ -1,6 +1,5 @@
 import { onLogoClick } from './fetchTrendyMovie';
-import { onWatchedBtnClick, onQueueBtnClick } from './myLibrary';
-import { removePagination } from './paginationPages';
+import { onWatchedBtnClick} from './myLibrary';
 
 function headerJS() {
   const headerPage = document.getElementById('headerMainPage');

@@ -106,7 +106,7 @@ function login() {
         last_login: Date.now(),
       };
       database_ref.child('users/' + user.uid).update(user_data);
-      Notiflix.Notify.success('Logged In!!');
+      // Notiflix.Notify.success('Logged In!!');
     })
     .catch(function (error) {
       const error_code = error.code;
@@ -125,9 +125,10 @@ firebase.auth().onAuthStateChanged(user => {
       userNameEl.innerHTML = user_data.full_name;
       Notiflix.Notify.success(`Welcome  ${user_data.full_name}`);
     });
-  } else {
-    console.log('not logged in');
   }
+  // else {
+  //   console.log('not logged in');
+  // }
 });
 //
 userNameEl.addEventListener('click', signOut);

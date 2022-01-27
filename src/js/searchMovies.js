@@ -42,9 +42,7 @@ try {
   });
 
   if(movies.length === 0) {
-    Notiflix.Notify.failure(`Search result not successful.Enter the correct movie name.`);
-    refs.div.innerHTML= `<img src="https://stringfixer.com/files/325551406.jpg"
-    alt="movie photo">`;
+    return Notiflix.Notify.failure(`Search result not successful.Enter the correct movie name.`);
   }
    renderMovies(movies);
    newPagination(totalPages);

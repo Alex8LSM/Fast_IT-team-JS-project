@@ -170,6 +170,7 @@
   display: flex;
   align-items: center;
   position: relative;
+  flex-direction: column;
 }
 .rightbt {
   display: flex;
@@ -216,4 +217,13 @@
   font-style: Roboto;
   font-weight: 500;
   font-size: 14px;
+}
+.userName {
+  color: #ffffff;
+  display: flex;
+  top: 50px;
+  right: 10px;
+  font-size: 15px;
+  font-family: Roboto;
+  font-weight: 500;
 }

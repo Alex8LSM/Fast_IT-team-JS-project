@@ -22,59 +22,60 @@ function onLogoClick(e) {
 }
 
 export function renderMainPage() {
-  
+  setTimeout(() => {
     trendyMovie
-        .putGenresAndCutReleaseDateToYear()
-        .then(renderFilmsCard)
-        .catch(error => {
-            console.log(error);
-        });
-  totalPagesMain = trendyMovie.totalPages;
-  newPaginationMain(trendyMovie.totalPages)
+      .putGenresAndCutReleaseDateToYear()
+      .then(renderFilmsCard)
+      .catch(error => {
+        console.log(error);
+      });
+    totalPagesMain = trendyMovie.totalPages;
+    newPaginationMain(trendyMovie.totalPages);
+  }, 1000);
 }
 
 export function renderFilmsCard(trendyMovies) {
-
   filmContainer.innerHTML = '';
   const markup = filmCardTpl(trendyMovies);
   filmContainer.insertAdjacentHTML('beforeend', markup);
-  
 }
 
 function newPaginationMain(totalPagesMain) {
   if (document.querySelector('.pagination-buttons-set')) {
-    document.querySelector(".pagination-buttons-set").innerHTML = ""
-    document.querySelector(".pagination-buttons-set").remove()
+    document.querySelector('.pagination-buttons-set').innerHTML = '';
+    document.querySelector('.pagination-buttons-set').remove();
   }
-  
-  if (totalPagesMain < 2) { return }
-  
+
+  if (totalPagesMain < 2) {
+    return;
+  }
+
   if (totalPagesMain < 5) {
-    const paginationMain = new PaginationButton(totalPagesMain, 3, "-set", trendyMovie.page);
+    const paginationMain = new PaginationButton(totalPagesMain, 3, '-set', trendyMovie.page);
     paginationMain.render();
     paginationMain.onChange(e => {
-    let pageCurent = e.target.value;
+      let pageCurent = e.target.value;
       trendyMovie.pageSet(pageCurent);
       apiMoviesWithoutPaginator();
-      scrolledToTop(scrollY)
+      scrolledToTop(scrollY);
     });
-  }
-  else {const paginationMain = new PaginationButton(totalPagesMain, 5, "-set", trendyMovie.page);
-  paginationMain.render();
-  paginationMain.onChange(e => {
-    let pageCurent = e.target.value;
-    trendyMovie.pageSet(pageCurent);
-    apiMoviesWithoutPaginator()
-    scrolledToTop(scrollY)
+  } else {
+    const paginationMain = new PaginationButton(totalPagesMain, 5, '-set', trendyMovie.page);
+    paginationMain.render();
+    paginationMain.onChange(e => {
+      let pageCurent = e.target.value;
+      trendyMovie.pageSet(pageCurent);
+      apiMoviesWithoutPaginator();
+      scrolledToTop(scrollY);
     });
   }
 }
 
-function apiMoviesWithoutPaginator(){
-trendyMovie
-  .putGenresAndCutReleaseDateToYear()
-  .then(renderFilmsCard)
-  .catch(error => {
+function apiMoviesWithoutPaginator() {
+  trendyMovie
+    .putGenresAndCutReleaseDateToYear()
+    .then(renderFilmsCard)
+    .catch(error => {
       console.log(error);
-  });
+    });
 }

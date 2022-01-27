@@ -11,6 +11,15 @@
   background-position: center;
   position: relative;
   z-index: 100;
+  &__svg {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+}
+.notiflix-notify {
+  margin-top: 20px !important;
 }
 .login:hover {
   background-color: #ff6b08;
@@ -29,6 +38,7 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.692);
+  // background-image: url("../images/morph.png");
 }
 .signIn-login {
   position: relative;

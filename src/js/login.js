@@ -3,7 +3,7 @@ const modalSignIn = document.getElementById('signInModal');
 const btndesk = document.getElementById('signInBtn');
 const logInbtn = document.getElementById('logInBtn');
 const btnclose = document.getElementsByClassName('close')[0];
-// btndesk.onclick = myModal;
+btndesk.onclick = myModal;
 logInbtn.onclick = myModalSignIn;
 //
 function myModalSignIn() {

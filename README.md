@@ -1,4 +1,4 @@
-                      Our team members tasks:
+--------------------------------Our team members tasks:---------------------------------
                       
 Oleksandr Khvaleba - Team Lead, favicon, main-container, local-storage write, team-modal
 

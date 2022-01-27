@@ -62,12 +62,10 @@ function register() {
 
   if (validate_email(email) == false || validate_password(password) == false) {
     Notiflix.Notify.failure('Email or Password is Outta Line!!');
-    // alert('Email or Password is Outta Line!!');
     return;
   }
   if (validate_field(full_name) == false) {
     Notiflix.Notify.failure('Full Name is Outta Line!!');
-    // alert('One or More Extra Fields is Outta Line!!');
     return;
   }
 
@@ -84,7 +82,6 @@ function register() {
       };
       database_ref.child('users/' + user.uid).set(user_data);
       Notiflix.Notify.success('Registered!!');
-      // alert('User Created!!');
     })
     .catch(function (error) {
       const error_code = error.code;
@@ -97,7 +94,6 @@ function login() {
   const password = document.getElementById('loginPassword').value;
   if (validate_email(email) == false || validate_password(password) == false) {
     Notiflix.Notify.failure('Email or Password is Outta Line!!');
-    // alert('Email or Password is Outta Line!!');
     return;
   }
 
@@ -111,7 +107,6 @@ function login() {
       };
       database_ref.child('users/' + user.uid).update(user_data);
       Notiflix.Notify.success('Logged In!!');
-      // alert('User Logged In!!');
     })
     .catch(function (error) {
       const error_code = error.code;

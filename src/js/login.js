@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 const modalLogin = document.getElementById('loginModal');
 const modalSignIn = document.getElementById('signInModal');
 const btndesk = document.getElementById('signInBtn');
@@ -50,16 +51,18 @@ registerUser.addEventListener('click', register);
 logInUser.addEventListener('click', login);
 //
 function register() {
-  email = document.getElementById('email').value;
-  password = document.getElementById('password').value;
-  full_name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const full_name = document.getElementById('name').value;
 
   if (validate_email(email) == false || validate_password(password) == false) {
-    alert('Email or Password is Outta Line!!');
+    Notiflix.Notify.failure('Email or Password is Outta Line!!');
+    // alert('Email or Password is Outta Line!!');
     return;
   }
   if (validate_field(full_name) == false) {
-    alert('One or More Extra Fields is Outta Line!!');
+    Notiflix.Notify.failure('Full Name is Outta Line!!');
+    // alert('One or More Extra Fields is Outta Line!!');
     return;
   }
 
@@ -75,7 +78,8 @@ function register() {
         logIn: false,
       };
       database_ref.child('users/' + user.uid).set(user_data);
-      alert('User Created!!');
+      Notiflix.Notify.success('User Registered!!');
+      // alert('User Created!!');
     })
     .catch(function (error) {
       const error_code = error.code;
@@ -84,10 +88,11 @@ function register() {
     });
 }
 function login() {
-  email = document.getElementById('loginEmail').value;
-  password = document.getElementById('loginPassword').value;
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
   if (validate_email(email) == false || validate_password(password) == false) {
-    alert('Email or Password is Outta Line!!');
+    Notiflix.Notify.failure('Email or Password is Outta Line!!');
+    // alert('Email or Password is Outta Line!!');
     return;
   }
 
@@ -100,7 +105,8 @@ function login() {
         last_login: Date.now(),
       };
       database_ref.child('users/' + user.uid).update(user_data);
-      alert('User Logged In!!');
+      Notiflix.Notify.success('User Logged In!!');
+      // alert('User Logged In!!');
     })
     .catch(function (error) {
       const error_code = error.code;
@@ -110,7 +116,7 @@ function login() {
     });
 }
 function validate_email(email) {
-  expression = /^[^@]+@\w+(\.\w+)+\w$/;
+  const expression = /^[^@]+@\w+(\.\w+)+\w$/;
   if (expression.test(email) == true) {
     return true;
   } else {

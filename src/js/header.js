@@ -21,41 +21,9 @@ function onClickLibrary(e) {
     homeLink.classList.remove('current');
     libraryLink.classList.add('current');
 
-    const filmContainer = document.querySelector('.main-container-films');
-    filmContainer.innerHTML = '';
-
-    // emptyContainer();
     onWatchedBtnClick();
   }
   libraryLink.addEventListener('click', onClickLibrary);
-
-   function emptyContainer() {
-    const WatchedIds = JSON.parse(localStorage.getItem('watched'));
-    const QueueIds = JSON.parse(localStorage.getItem('queue'));
-    const emptyTitle = document.querySelector('.container-empty__title');
-    const emptyImage = document.querySelector('.container-empty__image');
-
-     if (WatchedIds === null || WatchedIds.length === 0) {
-      removePagination();
-      emptyTitle.classList.add('visible');
-      emptyImage.classList.add('visible');
-    } else {
-      emptyTitle.classList.remove('visible');
-      emptyImage.classList.remove('visible');
-      onWatchedBtnClick();
-    }
-
-     if (QueueIds === null || QueueIds.length === 0) {
-      removePagination();
-      emptyTitle.classList.add('visible');
-      emptyImage.classList.add('visible');
-    } else {
-      emptyTitle.classList.remove('visible');
-      emptyImage.classList.remove('visible');
-      onQueueBtnClick();
-    }
-  }
-
 
   function onClickHome(e) {
     headerPage.classList.remove('header-library');
